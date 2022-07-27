@@ -1,0 +1,21 @@
+{% extends 'catalog/base_generic.html' %}
+{% load bulma_tags i18n %}
+
+{% block title %}{% trans 'Registration on nstopboost.com' %}{% endblock %}
+{% block Description %}{% endblock Description %}
+
+{% load bulma_tags %}
+
+{% block hero %}
+    <div class="column is-5-widescreen is-offset-2-widescreen  is-5-desktop is-offset-2-desktop is-10-tablet is-offset-1-tablet">
+      <h3 class="title is-3">{% trans 'Registration' %}</h3>
+      <form method="post"  >
+        {% csrf_token %}
+        {{ form|bulma }}
+         <div class="field">
+            <button type="submit" class="button is-primary">Sign up</button>
+         </div>
+       <input type="hidden" name="next" value="{{ next }}"/>
+      </form>
+    </div>
+{% endblock hero %}

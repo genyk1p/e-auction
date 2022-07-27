@@ -1,0 +1,205 @@
+return HttpResponseNotFound("You do not have permission to view this page.")
+&nbsp;
+
+drivers = []
+            i = ('39483940257230', 'Do not change driver')
+            drivers.append(i)
+            bidedorders = BidedOrder.objects.all().filter(order=order)
+            for bidedorder in bidedorders:
+                try:
+                    driv_card = Driver.objects.get(user_driver=bidedorder.user_driver)
+                except:
+                    driv_card = Driver()
+                    driv_card.user_driver = bidedorder.user_driver
+                    driv_card.rating = None
+                    driv_card.number_done_orders = 0
+                    driv_card.save()
+                i = (bidedorder.pk,
+                     ('Driver name=' + str(bidedorder.user_driver) + ', Price=' + str(bidedorder.total) + ' Euro') +
+                     ', Driver Rating=' + str(driv_card.rating) + ', Driver done orders=' + str(
+                         driv_card.number_done_orders))
+                drivers.append(i)
+
+            label1 = product.first_label_name
+            label2 = product.second_label_name
+            label3 = product.third_label_name
+            label4 = product.first_label_name
+            label5 = product.fifth_label_name
+
+            class OrderForm(forms.Form):
+                payment_system = []
+                payment_system_q = Payment_system_settings.objects.all().filter(status=True)
+                for i in payment_system_q:
+                    z = (i.name, i.name)
+                    payment_system.append(z)
+
+                select_driver = forms.ChoiceField(
+                    choices=drivers,
+                    label='Select another driver and price',
+                )
+                payment_system = forms.ChoiceField(
+                    choices=payment_system,
+                    label='Select payment method',
+                    required=True
+                )
+                if label1 is not None:
+                    label1_text = forms.CharField(
+                        label=label1,
+                        max_length=100
+                    )
+                if label2 is not None:
+                    label2_text = forms.CharField(
+                        label=label2,
+                        max_length=100
+                    )
+                if label3 is not None:
+                    label3_text = forms.CharField(
+                        label=label3,
+                        max_length=100
+                    )
+                if label4 is not None:
+                    label4_text = forms.CharField(
+                        label=label4,
+                        max_length=100
+                    )
+                if label5 is not None:
+                    label5_text = forms.CharField(
+                        label=label5,
+                        max_length=100
+                    )
+
+            if request.method == 'POST':
+                form = OrderForm(request.POST)
+                if form.is_valid():
+                    label1_text = ''
+                    label2_text = ''
+                    label3_text = ''
+                    label4_text = ''
+                    label5_text = ''
+
+                    order.status = 'Pending'
+                    driver = form.cleaned_data['select_driver']
+                    if driver != '39483940257230':
+                        bidedorde = BidedOrder.objects.get(pk=driver)
+                        order.total = bidedorde.total
+                        order.user_driver = bidedorde.user_driver
+                    invoice = Invoice()
+                    invoice.amount = order.total
+                    invoice.payment_system = form.cleaned_data['payment_system']
+                    invoice.save()
+                    order.invoice = invoice
+                    if label1 is not None:
+                        label1_text = str(label1) + ': ' + str(form.cleaned_data['label1_text']) + '<br>'
+                    if label2 is not None:
+                        label2_text = str(label2) + ': ' + str(form.cleaned_data['label2_text']) + '<br>'
+                    if label3 is not None:
+                        label3_text = str(label3) + ': ' + str(form.cleaned_data['label3_text']) + '<br>'
+                    if label4 is not None:
+                        label4_text = str(label4) + ': ' + str(form.cleaned_data['label4_text']) + '<br>'
+                    if label5 is not None:
+                        label5_text = str(label5) + ': ' + str(form.cleaned_data['label5_text']) + '<br>'
+                    label_sum_text = label1_text + label2_text + label3_text + label4_text + label5_text
+                    order.label_value = order.label_value1 + label_sum_text
+
+                    order.save()
+                    if invoice.payment_system == 'PayPal':
+                        paypal_email = Payment_system_settings.objects.get(name='PayPal').email
+                        invoice.payment_system_email = paypal_email
+                        invoice.save()
+                        # test = invoice.order_invoice.total
+                        # print(test)
+                        paypal_dict = {
+                            "business": str(paypal_email),
+                            "amount": invoice.amount,
+                            "item_name": 'Order №' + str(order.pk) + ' ' + str(order.product.name) + ' ' + str(order.label_value),
+                            "invoice": invoice.pk,
+                            "notify_url": request.build_absolute_uri(reverse('paypal-ipn')),
+                            "return": request.build_absolute_uri(reverse('successfully_payment')),
+                            "cancel_return": request.build_absolute_uri(reverse('unsuccessful_payment')),
+                            "custom": "premium_plan",  # Custom command to correlate to some function later (optional)
+                            "currency_code": "EUR",
+                        }
+                        form = PayPalPaymentsForm(initial=paypal_dict)
+                        context = {
+                            'form': form,
+                            'product': order.product.name,
+                            'amount': invoice.amount,
+                            'Driver': order.user_driver.username,
+                            'Payment_method': invoice.payment_system,
+                            'order': order
+                        }
+                        return render(request, "payment/payment.html", context)
+
+            form = OrderForm()
+            try:
+                driver_card = Driver.objects.get(user_driver=order.user_driver)
+            except:
+                driver_card = Driver()
+                driver_card.user_driver = order.user_driver
+                driver_card.number_done_orders = 0
+                driver_card.rating = None
+                driver_card.save()
+
+            if order.user_driver is not None:
+                context = {
+                    'order': order,
+                    'form': form,
+                    'driver_rating': driver_card.rating,
+                    'driver_n_order': driver_card.number_done_orders
+                }
+
+                return render(request, 'catalog/customer_order.html', context)
+
+
+  # else:
+            #     context = {
+            #         'order': order,
+            #         'driver_rating': driver_card.rating,
+            #         'driver_n_order': driver_card.number_done_orders
+            #     }
+            #     return render(request, 'catalog/customer_order_done.html', context)
+
+
+  <div class="columns">
+        <div class="column">
+            <div class="block">
+                 <strong>{% trans 'Product name:' %} </strong>{{order.product.name}}
+            </div>
+            <div class="block">
+                 <strong>{% trans 'Fraction:' %} </strong>{{order.fraction}}
+            </div>
+            <div class="block">
+                 <strong>{% trans 'Options descriptions:' %} </strong>
+                <br>{% autoescape off %}{{order.label_value1}}{% endautoescape %}
+            </div>
+            <div class="block">
+                <strong>{% trans 'Driver:' %} </strong>{{order.user_driver}}
+            </div>
+            <div class="block">
+                <strong>{% trans 'Driver done orders:' %} </strong>{{driver_n_order}}
+            </div>
+            <div class="block">
+                <strong>{% trans 'Driver rating:' %} </strong>{{driver_n_order}}
+            </div>
+            <div class="block">
+                <strong>{% trans 'Price:' %} </strong>{{order.total}} Euro
+            </div>
+        </div>
+        <div class="column">
+            <div class="block">
+                <strong>{% trans 'If you want change your driver and price please select it below, or you can click "Pay" in this way your will work with current driver.' %}</strong>
+            </div>
+            {% trans 'Pay' as pay %}
+            <div class="block">
+                {% load bulma_tags %}
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <table>
+                        {{ form |bulma }}
+                    </table>
+                    <input type="submit" class="button is-link" value='{{pay}}' />
+                </form>
+            </div>
+        </div>
+    </div>
+

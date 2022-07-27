@@ -1,0 +1,106 @@
+{% extends 'catalog/base_generic.html' %}
+{% load i18n %}
+{% block title %}{% endblock %}
+{% block Description %}{% endblock Description %}
+{% block content %}
+    {% if 'catalog.change_order' in perms %}
+
+        <a class="button is-link" HREF="{% url 'requested-orders' %}">New</a>
+        <a class="button is-link" HREF="{% url 'requested-orders-pending' %}">Pending</a>
+        <a class="button is-link" HREF="{% url 'requested-orders-paid' %}">Paid</a>
+        <a class="button is-link" HREF="{% url 'requested-orders-processing' %}">Processing</a>
+        <a class="button is-link" HREF="{% url 'requested-orders-complete' %}">Complete</a>
+        <br><br>
+
+        <table class="table is-striped">
+            <tr>
+                <th>
+                    {% trans 'Order id' %}
+                </th>
+                <th>
+                    {% trans 'Product Name' %}
+                </th>
+                 <th>
+                    {% trans 'Product overview' %}
+                </th>
+                <th>
+                    {% trans 'Current price' %}
+                </th>
+                <th>
+                    {% trans 'Minimal price' %}
+                </th>
+                <th>
+                    {% trans 'Driver' %}
+                </th>
+                <th>
+                    {% trans 'Driver rank' %}
+                </th>
+                <th>
+                    {% trans 'Fraction' %}
+                </th>
+                <th>
+                    {% trans 'Mode' %}
+                </th>
+                <th>
+                    {% trans 'Action' %}
+                </th>
+            </tr>
+            {% for order in orders %}
+                <tr >
+                <th >
+                    {{ order.pk }}
+                </th>
+                <th >
+                    <a HREF="{% url 'requested-order' order.pk %}">{{ order.name }}</a>
+                </th>
+                <th>
+                     {% autoescape off %}{{order.label_value}}{% endautoescape %}
+                </th>
+                <th>
+                    {{order.total_rub}}&nbsp;RUB
+                </th>
+                <th>
+                    {{order.minimal_order_price}}&nbsp;RUB
+                </th>
+                <th>
+                    {% if user.username == order.driver %}
+                        {% trans 'You' %}
+                    {% else %}
+                        {% trans 'Not You' %}
+                    {% endif %}
+                </th>
+                <th>
+                    {{order.driver_rank}}
+                </th>
+                <th>
+                    {{ order.fraction }}
+                </th>
+                <th>
+                    {% if order.required_piloted == True %}
+                        Piloted
+                    {% else %}
+                        SelfPlay
+                    {% endif %}
+                </th>
+                <th>
+                    <a class="button is-link" href="{% url 'bid_order' order.pk order.total %}">{% trans 'Bid' %}</a>
+                </th>
+                </tr>
+            {% endfor %}
+        </table>
+        <div>
+            {% if page.has_previous %}
+                <a class="button icon-prev" href="?page={{ page.previous_page_number }}">{% trans 'Previous page' %}</a>
+            {% else %}
+                <a class="button icon-prev" href="">{% trans 'Previous page' %}</a>
+            {% endif %}
+            {% if page.has_next %}
+                <a class="button icon-next" href="?page={{ page.next_page_number }}">{% trans 'Next page' %}</a>
+            {% else %}
+                <a class="button icon-next" href="">{% trans 'Next page' %}</a>
+            {% endif %}
+        </div>
+    {% else %}
+        <h1>{% trans 'You are not authorized to view this page.' %}</h1>
+    {% endif %}
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends 'catalog/base_generic.html' %}
+{% load i18n %}
+
+{% block title %}{% endblock %}
+{% block Description %}content=""{% endblock Description %}
+
+{% block content %}
+    <p>{% trans 'Your order has been successfully added to a driver search.' %}</p>
+    <p>{% trans "You can see your orders for which the driver is currently being searched for at " %}<a HREF="{% url 'customer-orders' %}">
+        {% trans 'this link' %}</a></p>
+{% endblock content %}

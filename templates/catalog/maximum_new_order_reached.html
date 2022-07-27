@@ -1,0 +1,15 @@
+{% extends 'catalog/base_generic.html' %}
+{% load i18n %}
+
+{% block title %}{% endblock %}
+{% block Description %}content=""{% endblock Description %}
+
+{% block content %}
+    <p>{% trans 'You have reached the maximum possible number of orders with the "New" status.' %}</p>
+    <p>{% trans 'New - the order status for which the driver is currently being searched for.' %}</p>
+    <p>{% trans 'To place a new order, You need either to wait for the completion of the searching of the Driver for the current order, or cancel one of the current orders using' %}
+        <a HREF="{% url 'customer-orders' %}">{% trans 'this link' %}</a>
+    </p>
+
+
+{% endblock content %}

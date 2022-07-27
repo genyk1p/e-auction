@@ -1,0 +1,66 @@
+{% extends 'catalog/base_generic.html' %}
+{% load i18n %}
+
+{% block title %}{% endblock %}
+{% block Description %}{% endblock Description %}
+{% load bulma_tags %}
+
+{% block content %}
+    <div class="columns">
+        <div class="column">
+            <div class="tile is-ancestor">
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <div class="content">
+                            <p class="title">{% trans 'Product Description:' %}</p>
+                            <p class="subtitle">{% trans 'Product name:' %}</p>
+                            <div class="content">
+                                {{order.product.name}}
+                            </div>
+                            <p class="subtitle">{% trans 'Options descriptions:' %}</p>
+                            <div class="content">
+                                {% autoescape off %}{{order.label_value1}}{% endautoescape %}
+                            </div>
+                            <p class="subtitle">{% trans 'Fraction:' %}</p>
+                            <div class="content">
+                                {{order.fraction}}
+                            </div>
+                            <p class="subtitle">{% trans 'Driver:' %}</p>
+                            <div class="content">
+                                {{order.user_driver}}
+                            </div>
+                            <p class="subtitle">{% trans 'Driver done orders quantity:' %}</p>
+                            <div class="content">
+                                {{driv_card.number_done_orders}}
+                            </div>
+                            <p class="subtitle">{% trans 'Driver rating:' %}</p>
+                            <div class="content">
+                                {{driv_card.rating}}
+                            </div>
+                            <p class="subtitle">{% trans 'Price:' %}</p>
+                            <div class="content">
+                                 {{order.total}} Euro
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="block">
+                <strong>{% trans 'If You want to change the driver please click on this' %}</strong>&nbsp;
+                <a HREF="{% url 'customer-order' order.pk %}">{% trans 'link' %}</a>
+            </div>
+            {% trans 'Next' as next %}
+            <div class="block">
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <table>
+                        {{ form |bulma }}
+                    </table>
+                    <input type="submit" class="button is-link" value='{{next}}' />
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

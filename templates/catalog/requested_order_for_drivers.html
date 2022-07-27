@@ -1,0 +1,82 @@
+{% extends 'catalog/base_generic.html' %}
+{% load bulma_tags %}
+{% load i18n %}
+
+{% block title %}{% trans 'Active order information for drivers' %}{% endblock %}
+{% block Description %}{% endblock Description %}
+
+{% block content %}
+{% if 'catalog.change_order' in perms %}
+    {% if var1 != None %}
+        <div class="notification is-success">
+           {{ var1 }}
+        </div>
+        {% endif %}
+    <div class="columns is-12" >
+    <div class="column is-7" >
+    <strong>{% trans 'Current offer:' %}</strong>
+        <table class="table is-striped">
+        <tr>
+            <th>
+                {% trans 'Order id' %}
+            </th>
+            <th>
+                {% trans 'Product Name' %}
+            </th>
+            <th>
+                {% trans 'Price' %}
+            </th>
+            <th>
+                {% trans 'Minimal Price' %}
+            </th>
+            <th>
+                {% trans 'Order Status' %}
+            </th>
+            <th>
+                {% trans 'Driver' %}
+            </th>
+        </tr>
+        <tr>
+            <th>
+                {{ order.pk }}
+            </th>
+            <th>
+               {{ order.product.name }}
+            </th>
+            <th>
+                {{total_rub}}&nbsp;RUB
+            </th>
+            <th>
+                {{minimal_order_price_rub}}&nbsp;RUB
+            </th>
+            <th>
+                {{ order.status }}
+            </th>
+            <th>
+                {% if user.username == order.user_driver.username %}
+                    {% trans 'You' %}
+                {% else %}
+                    {% trans 'Not You' %}
+                {% endif %}
+            </th>
+        </tr>
+    </table>
+        <strong>{% trans 'Описание продукта:' %}</strong>
+        <h1>{% autoescape off %}{{ order.product.content }}{% endautoescape %}</h1>
+       <strong>{% trans 'Описание опций:' %}</strong>
+        <h1>{% autoescape off %}{{ order.label_value }}{% endautoescape %}</h1>
+    </div>
+    <div class="column">
+        <form method="post" action="">
+            {% csrf_token %}
+            <table>
+               {{ form |bulma }}
+            </table>
+            {% trans 'Bid' as bid %}
+            <input type="submit" class="button is-link" value='{{ bid }}' />
+        </form>
+    </div>
+</div>
+    <a href="{% url 'delet-bided-order' order.pk %}">{% trans 'To delete the "BID" for the current order, click on this link.' %}</a>
+{% endif %}
+{% endblock content %}

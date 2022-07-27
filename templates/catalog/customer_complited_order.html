@@ -1,0 +1,29 @@
+{% extends 'catalog/base_generic.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Completed order' %}{% endblock %}
+{#{% block Description %}content="Тут должен быть Description"{% endblock Description %}#}
+
+{% block content %}
+    <p>{% trans 'Product name' %} - {{order.product.name}}</p><br>
+    <p>{% trans 'Driver' %} - {{order.user_driver}}</p><br>
+    <p>{% trans 'Price' %} - {{order.total}} Euro</p><br>
+    <p>{% trans 'Review' %} - {{review}} </p><br>
+    <p>{% trans 'Rating' %} - {{rating}} </p><br>
+
+
+    {% trans 'Submit' as Submit %}
+    {% load bulma_tags %}
+    <form method="post" action="">
+        {% csrf_token %}
+        <table>
+            {{ form |bulma }}
+        </table>
+        <input type="submit" class="button is-link" value='{{ Submit }}' />
+    </form>
+
+
+
+
+
+{% endblock content %}

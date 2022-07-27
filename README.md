@@ -1,2 +1,2 @@
-# e-auction
- 
+#Auction platform for selling services in online games
+This platform allows you to bring together sellers (people who provide services in online games) and buyers (players who want to buy services within the game) in one place. The platform provides tools with which the platform administrator can design a service (goods) that the player can later buy. The search for a performer takes place on the principle of an open auction, the performer (players who want to perform the service) place their offers, and the buyer player chooses the most suitable performer for him.

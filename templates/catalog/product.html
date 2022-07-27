@@ -1,0 +1,50 @@
+{% extends 'catalog/base_generic.html' %}
+{% load i18n %}
+
+{% block title %}{{product.title}}{% endblock %}
+{% block Description %}content="{{product.description}}"{% endblock Description %}
+
+{% block content %}
+    <div class="columns is-12">
+        <div class="column is-7">
+            <div class="block">
+                <strong>{% trans 'Product name: ' %}</strong>{{product.name}}
+            </div>
+            <div class="block">
+                <strong>{% trans 'Product overview: ' %}</strong><br>
+                {% autoescape off %}{{product.content}}{% endautoescape %}
+            </div>
+            {% if user_buyer_rank == 'Base' %}
+            <div class="block">
+                <strong>{% trans "Description of option 'Drivers rank' : " %}</strong><br>
+                {% trans "We draw Your attention to the fact that by choosing 'All drivers', all platform drivers will be able to offer themselves as a driver for Your order. Drivers not tested by our platform may have a poorer playing skill, which will lead to unnecessary wipes or delays in the provision of the service, but but You should take into consideration that these drivers can also perform the service significantly cheaper. If You want a guaranteed strong team, please choose 'Verified drivers'." %}
+            </div>
+            {% endif %}
+        </div>
+        <div class="column">
+            <div class="block">
+                <strong>{% trans 'Product starting price: ' %}</strong>{{product.price}}&nbsp; EURO
+            </div>
+            {% if selfplaymsg != None %}
+              <div class="block">
+                <strong>{{ selfplaymsg }}</strong>
+            </div>
+            {% endif %}
+            <div class="block">
+                {% load bulma_tags %}
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <table>
+                        {{ form |bulma }}
+                    </table>
+                    {% trans 'Submit' as sm %}
+                    <input type="submit" class="button is-link" value="{{ sm }}" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock content %}
+

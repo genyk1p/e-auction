@@ -1,0 +1,116 @@
+{% extends 'catalog/base_generic.html' %}
+{% load i18n %}
+
+{% block title %}{% endblock %}
+{% block Description %}content=""{% endblock Description %}
+
+{% block hero %}
+    <section class="hero is-info">
+        <div class="hero-body">
+            <div class="container  notification is-info is-child">
+                <p class="title">
+                {% trans 'Orders with order status: ' %}{{ user_order_status }}
+                </p>
+            </div>
+        </div>
+    </section>
+{% endblock hero %}
+
+
+{% block content %}
+    <div class="columns is-12">
+        <div class="column is-8">
+            <table class="table is-striped">
+                <tr>
+                    <th>
+                        {% trans 'Order ID' %}
+                    </th>
+                    <th>
+                        {% trans 'Product Name' %}
+                    </th>
+                    <th>
+                        {% trans 'Status' %}
+                    </th>
+                    <th>
+                        {% trans 'Driver' %}
+                    </th>
+                    <th align="center">
+                        {% trans 'Product overview' %}
+                    </th>
+                    <th>
+                        {% trans 'Current price' %}
+                    </th>
+                </tr>
+                {% for order in orders %}
+                    <tr>
+                    <th>
+                        <li>{{order.pk}}</li>
+                    </th>
+                    <th>
+                        <a HREF="{% url 'customer-order' order.pk %}">{{ order.product.name }}</a>
+                    </th>
+                    <th>
+                        {{order.status}}
+                    </th>
+                    <th>
+                        {{order.user_driver}}
+                    </th>
+                    <th align="center">
+                        {% autoescape off %}{{order.label_value1}}{% endautoescape %}
+                    </th>
+                    <th>
+                        {{order.total}}&nbsp;EURO
+                    </th>
+                    </tr>
+                {% endfor %}
+            </table>
+            <div>
+                {% if page.has_previous %}
+                    <a class="button icon-prev" href="?page={{ page.previous_page_number }}">{% trans 'Previous page' %}</a>
+                {% else %}
+                    <a class="button icon-prev" href="">{% trans 'Previous page' %}</a>
+                {% endif %}
+                {% if page.has_next %}
+                    <a class="button icon-next" href="?page={{ page.next_page_number }}">{% trans 'Next page' %}</a>
+                {% else %}
+                    <a class="button icon-next" href="">{% trans 'Next page' %}</a>
+                {% endif %}
+             </div>
+        </div>
+        <div class="column is-6">
+            {% load bulma_tags %}
+            <form method="post" action="">
+                {% csrf_token %}
+                <table>
+                    {{ form |bulma }}
+                </table>
+                {% trans 'Submit' as sm %}
+                <input type="submit" class="button is-link" value="{{ sm }}" />
+            </form>
+        </div>
+    </div>
+
+
+
+
+{% endblock content %}
+
+
+
+
+
+{#           {% for order in orders %}#}
+{##}
+{#               <a HREF="{% url 'customer-order' order.pk %}">Product Name:{{ order.product.name }} &nbsp; price - {{order.total}} Euro &nbsp; Status - {{ order.status }}</a><br>#}
+{#            {% endfor %}#}
+{##}
+{##}
+{#            <div>#}
+{#            {% if page.has_previous %}#}
+{#            <a href="?page={{ page.previous_page_number }}">Previous page</a>#}
+{#            {% endif %}#}
+{#            &nbsp;#}
+{#            {% if page.has_next %}#}
+{#            &nbsp;#}
+{#            <a href="?page={{ page.next_page_number }}">Next page</a>#}
+{#            {% endif %}#}

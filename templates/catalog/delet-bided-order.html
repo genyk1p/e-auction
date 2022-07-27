@@ -1,0 +1,57 @@
+{% extends 'catalog/base_generic.html' %}
+{% load bulma_tags %}
+{% load i18n %}
+
+{% block title %}{% trans 'Active order information for drivers' %}{% endblock %}
+{% block Description %}{% endblock Description %}
+
+{% block content %}
+{% if 'catalog.change_order' in perms %}
+    {% if var1 != None %}
+        <div class="notification is-success">
+           {{ var1 }}
+        </div>
+        {% endif %}
+
+<strong>{% trans 'If you want to cancel a bet, select the bet you need and click the cancel button.' %}</strong>
+<form method="post" action="">
+            <table class="table is-striped">
+                <tr>
+                    <th>
+                    </th>
+                    <th align="center">
+                        <strong>{% trans 'Order id:' %} </strong>
+                    </th>
+                    <th align="center">
+                        <strong>{% trans 'Product name:' %} </strong>
+                    </th>
+                    <th align="center">
+                        <strong>{% trans 'Price:' %} </strong>
+                    </th>
+
+                </tr>
+                    {% csrf_token %}
+                    {% for bidedorder in bided_order %}
+                        <tr>
+                            <th>
+                                <label class="radio"> <input type="radio" name="answer" value={{ bidedorder.id }}></label>
+                            </th>
+                            <th align="center">
+                                {{ bidedorder.order.id }}
+                            </th>
+                            <th align="center">
+                                {{ bidedorder.order.product.name }}
+                            </th>
+                            <th align="center">
+                                {{bidedorder.total_rub}}&nbsp RUB
+                            </th>
+                        </tr>
+                        {% endfor %}
+            </table>
+            {% trans 'Cancel Bid' as cancel %}
+            <button class="button is-primary" type="submit">{{ cancel }}</button>
+        </form>
+
+
+{% endif %}
+{% endblock content %}

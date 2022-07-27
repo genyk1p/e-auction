@@ -1,0 +1,12 @@
+{% extends "registration/base.html" %}
+{% load bulma_tags i18n %}
+{% block content %}
+    <h1>{% trans 'To complete registration, follow the link sent to the e-mail that You specified during registration or enter the verification code below.' %}</h1>
+    <h1>{% trans 'If You have not received an e-mail within 10 minutes, please check Your spam folder.' %}</h1>
+    <form method="post" action="">
+    {% csrf_token %}
+        {{ form|bulma }}
+        {% trans 'Submit' as sm %}
+        <input type="submit" class="button is-link" value="{{ sm }}" />
+    </form>
+{% endblock %}

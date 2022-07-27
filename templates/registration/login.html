@@ -1,0 +1,20 @@
+{% extends "registration/base.html" %}
+{% load bulma_tags i18n %}
+
+{% block content %}
+
+  {% if form.errors %}
+    <p>{% trans "Your username and password didn't match. Please try again." %}</p>
+  {% endif %}
+    <p>{% trans "Please enter Your username (not email) and password." %}</p>
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{ form|bulma }}
+      <a href="{% url 'password_reset' %}">{% trans 'Reset password'%}</a>
+    <div class="field">
+              <button type="submit" class="button is-primary">{% trans 'Log in' %}</button>
+    </div>
+    <input type="hidden" name="next" value="{{ next }}"/>
+  </form>
+
+{% endblock %}

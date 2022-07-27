@@ -1,0 +1,87 @@
+{% extends 'catalog/base_generic.html' %}
+{% load i18n %}
+{% block title %}{% endblock %}
+{% block Description %}{% endblock Description %}
+{% block content %}
+    {% if 'catalog.change_order' in perms %}
+        <a class="button is-link" HREF="{% url 'requested-orders' %}">New</a>
+        <a class="button is-link" HREF="{% url 'requested-orders-pending' %}">Pending</a>
+        <a class="button is-link" HREF="{% url 'requested-orders-paid' %}">Paid</a>
+        <a class="button is-link" HREF="{% url 'requested-orders-processing' %}">Processing</a>
+        <a class="button is-link" HREF="{% url 'requested-orders-complete' %}">Complete</a>
+        <br><br>
+
+        <table class="table is-striped">
+            <tr>
+                <th>
+                    {% trans 'Order id' %}
+                </th>
+                <th>
+                    {% trans 'Product Name' %}
+                </th>
+                <th>
+                    {% trans 'Price' %}
+                </th>
+                <th>
+                    {% trans 'Order Status' %}
+                </th>
+            </tr>
+            {% for order in orders %}
+                <tr>
+                <th>
+                    {{ order.pk }}
+                </th>
+                <th>
+                    <a HREF="{% url 'requested-order' order.pk %}">{{ order.product.name }}</a>
+                </th>
+                <th>
+                    {{order.total_rub}}&nbsp;RUB
+                </th>
+                <th>
+                    {{ order.status }}
+                </th>
+                </tr>
+            {% endfor %}
+        </table>
+        <div>
+            {% if page.has_previous %}
+                <a class="button icon-prev" href="?page={{ page.previous_page_number }}">{% trans 'Previous page' %}</a>
+            {% else %}
+                <a class="button icon-prev" href="">{% trans 'Previous page' %}</a>
+            {% endif %}
+            {% if page.has_next %}
+                <a class="button icon-next" href="?page={{ page.next_page_number }}">{% trans 'Next page' %}</a>
+            {% else %}
+                <a class="button icon-next" href="">{% trans 'Next page' %}</a>
+            {% endif %}
+        </div>
+    {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+{#        {% for order in orders %}#}
+{#            <a HREF="{% url 'requested-order' order.pk %}">Order id: {{ order.pk }};  Product Name:{{order.name}}; price - {{order.total_rub}} RUB</a><br>#}
+{#        {% endfor %}#}
+{#    {% else %}#}
+{#        <h1>You are not authorized to view this page.</h1>#}
+{#    {% endif %}#}
+{#    {% load bulma_tags %}#}
+{#    <div>#}
+{#        {% if page.has_previous %}#}
+{#            <a href="?page={{ page.previous_page_number }}">Previous page</a>#}
+{#        {% endif %}#}
+        {#    Часть № {{ page.number }} из {{ page.previous_page_number }}#}
+{#        {% if page.has_next %}#}
+{#          <a href="?page={{ page.next_page_number }}">Next page</a>#}
+{#        {% endif %}#}
+{#    </div>#}
+{% endblock content %}

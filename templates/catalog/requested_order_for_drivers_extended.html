@@ -1,0 +1,25 @@
+{% extends 'catalog/base_generic.html' %}
+{% load i18n %}
+
+{% block title %}{% endblock %}
+{% block Description %}{% endblock Description %}
+
+{% block content %}
+    <div class="block">
+        <strong>{% trans 'Order number: ' %}</strong>{{order.pk}}
+    </div>
+    <div class="block">
+        <strong>{% trans 'Product name: ' %}</strong>{{order.product.name}}
+    </div>
+    <div class="block">
+        <strong>{% trans 'Product Description: ' %}</strong><br>
+        {% autoescape off %}{{order.product.content}}{% endautoescape %}
+    </div>
+    <div class="block">
+        <strong>{% trans 'Options descriptions' %}</strong><br>
+        {% autoescape off %} {{ order.label_value }}{{ order.label_value_private }}{% endautoescape %}
+    </div>
+    <div class="block">
+        <strong>{% trans 'Total price RUB :' %}</strong>{{order.total_rub}}
+    </div>
+{% endblock content %}

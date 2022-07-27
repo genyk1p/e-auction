@@ -1,0 +1,12 @@
+{% extends 'catalog/base_generic.html' %}
+{% load i18n %}
+
+{% block title %}{{ information.title }}{% endblock %}
+{% block Description %}content="{{ information.meta_tag_description }}"{% endblock Description %}
+
+
+{% block content %}
+    <div class="{{ information.notification_class}}">
+        {% autoescape off %}{{information.content}}{% endautoescape %}
+    </div>
+{% endblock content %}

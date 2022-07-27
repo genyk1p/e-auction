@@ -1,0 +1,41 @@
+{% extends 'catalog/base_generic.html' %}
+{% load i18n %}
+
+
+{% block title %}{% trans 'Account settings: ' %} {% endblock %}
+{% block Description %}content='{% trans 'Account settings: ' %}'{% endblock Description %}
+
+{% block content %}
+    {% trans 'Change' as Change %}
+
+    <h1>{% trans 'Account settings: ' %}</h1>
+    <a href="{% url 'password_change' %}">{% trans 'Change password'%}</a>
+    <br><br>
+    <h1>{% trans 'Select Language:' %}</h1>
+    {% load i18n %}{% load bulma_tags %}
+            <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}">
+                <div class="select is-rounded">
+                <select name="language">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %} input type="submit">
+                            {{ language.name_local }} ({{ language.code }})
+                        </option>
+                    {% endfor %}
+                </select>
+                </div>
+                <input type="submit" class='button is-primary' value={{ Change }}>
+            </form>
+            {% if var2 == 1 %}
+            <br>
+            <h1>{% trans 'Quantity of completed orders: ' %} {{ driver.number_done_orders }}</h1><br>
+            <h1>{% trans 'Rating: ' %} {{ driver.rating }}</h1><br>
+            <h1>{% trans 'Can do order in piloted mode: ' %} {{ driver.can_do_piloted }}</h1><br>
+            <h1>{% trans 'Driver rank: ' %} {{ driver.driver_rank }}</h1><br>
+            {% endif %}
+{% endblock content %}
+
+

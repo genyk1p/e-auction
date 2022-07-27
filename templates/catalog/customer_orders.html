@@ -1,0 +1,78 @@
+{% extends 'catalog/base_generic.html' %}
+{% load i18n %}
+
+{% block title %}{% endblock %}
+{% block Description %}content=""{% endblock Description %}
+
+{% block hero %}
+    <section class="hero is-info" >
+        <div class="hero-body">
+            <div class="container  notification is-info is-child">
+                <p class="title">
+                {% trans 'Show all orders'%}
+                </p>
+            </div>
+        </div>
+    </section>
+{% endblock hero %}
+
+{% block content %}
+       <table class="table is-striped" >
+            <tr>
+                <th align="center">
+                    {% trans 'Order Id' %}
+                </th>
+                <th align="center">
+                    {% trans 'Product Name' %}
+                </th>
+                <th align="center">
+                    {% trans 'Status' %}
+                </th>
+                <th align="center">
+                    {% trans 'Driver' %}
+                </th>
+                <th align="center">
+                    {% trans 'Product overview' %}
+                </th>
+                <th align="center">
+                    {% trans 'Current price' %}
+                </th>
+            </tr>
+            {% for order in orders %}
+                <tr>
+                <th>
+                    <li>{{ order.pk }}</li>
+                </th>
+                <th>
+                    <a HREF="{% url 'customer-order' order.pk %}">{{ order.product.name }}</a>
+                </th>
+                <th align="center">
+                    {{order.status}}
+                </th>
+                <th align="center">
+                    {{order.user_driver}}
+                </th>
+                <th align="center">
+                    {% autoescape off %}{{order.label_value}}{% endautoescape %}
+                </th>
+                <th align="center">
+                    {{order.total}}&nbsp;EURO
+                </th>
+                </tr>
+            {% endfor %}
+        </table>
+    <div >
+        {% if page.has_previous %}
+            <a class="button icon-prev" href="?page={{ page.previous_page_number }}">Previous page</a>
+        {% else %}
+            <a class="button icon-prev" href="">{% trans 'Previous page' %}</a>
+        {% endif %}
+        {% if page.has_next %}
+            <a class="button icon-next" href="?page={{ page.next_page_number }}">{% trans 'Next page' %}</a>
+        {% else %}
+            <a class="button icon-next" href="">{% trans 'Next page' %}</a>
+        {% endif %}
+        <a class="button is-link" href="{% url 'customer-orders-filter' %}">{% trans 'Filter' %}</a>
+    </div>
+
+{% endblock content %}

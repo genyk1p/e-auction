@@ -1,0 +1,57 @@
+{% extends 'catalog/base_generic.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'WoW boost platform' %}{% endblock %}
+{% block verification %}<meta name="verification" content="81615bde673a6c49d147c6a51ee62f" />{% endblock %}
+{% trans 'On our platform, you can buy loot raid or dungeon boost directly from booster team at a minimum price' as cont %}
+{% block Description %}content="{{cont}}"{% endblock Description %}
+
+{% block hero %}
+    <section class="hero is-info">
+        <div class="hero-body">
+            <div class="container  notification is-info is-child">
+                <p class="title">
+                {% trans 'Welcome to p.mmo-lvl.com, the WoW boost platform' %}
+                </p>
+                <p class="subtitle">
+                {% trans 'Here you can buy boosts directly from the booster team at the lowest price.' %}
+                </p>
+            </div>
+        </div>
+    </section>
+{% endblock hero %}
+
+{% block content %}
+    <div class="comment">
+        <h4 class="title is-4 ">{% trans 'Briefly about how it works:' %}</h4>
+        <li>{% trans 'Our staff places on the platform service templates with an initial price and a detailed description of the service.' %}</li>
+        <li>{% trans 'The customer chooses which service is of interest to him and starts trading on it.' %}</li>
+        <li>{% trans 'Information about the start of trading is sent to all our boosters.' %}</li>
+        <li>{% trans 'Boosters begin to compete with each other for the right to fulfill this servant, by reducing the cost of the service.' %}</li>
+        <br>
+        <h4 class="title is-4">{% trans 'The advantages of our platform:' %}</h4>
+        <li>{% trans 'As a result of bidding for the service (healthy competition among boosters), the customer gets the opportunity to buy the service at the lowest price.' %}</li>
+        <li>{% trans 'Upon completion of the order, the customer can leave feedback on the booster. Based on the feedback, the platform automatically calculates the booster rating.' %}</li>
+        <li>{% trans 'Analysis of the price of the service and the rating of the booster allows the customer to choose exactly the option that he needs.' %}</li>
+        <br>
+         <h4 class="title is-4">{% trans 'Now in more detail about how it works.' %}</h4>
+        <p class="subtitle has-text-justified">
+            {% trans "As we already wrote above, our staff places a product blank in which it is described in detail what exactly needs to be done, for example, the Castle Nathria Heroic Loot run raid. We place popular products on the platform, attach them to the right categories and make sure that they are relevant. This approach allows the customer to always look at only relevant services, and not try to find something they need among a heap of irrelevant garbage. For a booster, this approach is beneficial in that he does not need to come up with product descriptions, translate them into several languages and monitor the relevance of the information - the booster will do exactly what he knows best, namely, to do a boost. All this allows our platform to attract more boosters. A larger number of boosters leads to a more concise pricing of the service." %}
+         </p>
+        <br>
+        <h4 class="title is-4">{% trans 'A little more about the price.' %}</h4>
+        <p class="subtitle has-text-justified">
+            {% trans "A fixed price for a service does not always allow you to correctly form a price for a service. For example, you want to buy a raid and place an order on our platform, and by pure chance, at the same moment, one of the booster teams starts this particular raid with another client, and they (boosters) have free space in the raid just for you, with your by order. They do a raid not for you, but for the sake of someone else, and regardless of whether you buy this raid or not, they will go to this raid, but with your order you will be a nice bonus for this boosters team, as a result, this team will most likely offer the minimum price for your order and you can buy a boost for less than it actually costs if you buy it using the classic approach. And there can be a lot of such examples." %}
+        </p>
+        <br>
+        <h4 class="title is-4">{% trans "Now let's get back to the actual ordering process:" %}</h4>
+        <p class="subtitle has-text-justified">
+            {% trans "After you have chosen the service you are interested in, trading begins on it. Information that trading on the service has started on the platform is sent to all our boosters. Boosters see your order and make offers with a specific price. If the price offered by the booster is not the smallest, the booster sees it in his personal account and can offer a new price for the service (possibly even lower). After the expiration of the time specified by the customer during the formation of the order, the bidding for the order is terminated. The customer sees all the available offers from different boosters and can select the offer he needs and pay for it. Also, the customer may not wait for the completion of the bidding for the order and select the offer he needs during the bidding process. For example, the bidding time was 30 minutes, but after 5 minutes of bidding, an offer was received from one of the boosters that satisfied the customer. In this case, the customer may not wait for the completion of the bidding for the order and pay for it immediately. Then everything happens as in our regular store, you write the order number to the operator in the online chat and follow his instructions." %}
+        </p>
+    </div>
+{% endblock content %}
+
+
+
+
+

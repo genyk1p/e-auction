@@ -1,0 +1,67 @@
+{% extends 'catalog/base_generic.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'WoW boost platform' %}{% endblock %}
+{% trans 'On our platform, You can buy loot raid or dungeon boost directly from booster team at a minimum price' as cont %}
+{% block Description %}content="{{cont}}"{% endblock Description %}
+
+{% block hero %}
+    <section class="hero is-info">
+        <div class="hero-body">
+            <div class="container  notification is-info is-child">
+                <p class="title">
+                {% trans 'Welcome to platform nstopboost.com!' %}
+                </p>
+                <p class="subtitle">
+                {% trans 'Here You can buy the boost directly from the booster team at the minimal price.' %}
+                </p>
+            </div>
+        </div>
+    </section>
+{% endblock hero %}
+
+
+{% block content %}
+<div class="columns">
+    <div class="column is-8">
+        <table class="table is-striped">
+        <tr>
+            <th>
+                {% trans 'Product Name' %}
+            </th>
+            <th>
+                {% trans 'Starting price' %}
+            </th>
+        </tr>
+        {% for product in products %}
+            <tr>
+            <th>
+                <li><a href="{% url 'product_by_category' product.game.slug product.category.slug product.slug %}">{{ product.name }}</a></li>
+            </th>
+            <th>
+                {{product.price}}&nbsp;EURO
+            </th>
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+    <div class="column">
+         <div class="tile notification is-success">
+             <div class="content">
+                 <p class="subtitle">{% trans 'What next?' %}</p>
+                 <p class="title">{% trans 'How it works:' %}</p>
+                 <p class="subtitle">{% trans 'Select which product do you need' %}</p>
+                 <p class="subtitle">{% trans 'Start bidding on a product' %}</p>
+                 <p class="subtitle">{% trans 'Wait for 5-10 minutes' %}</p>
+                 <p class="subtitle">{% trans 'Choose the offer that suits You' %}</p>
+                 <p class="subtitle">{% trans "And that's all!" %}</p>
+                <div class="content">
+                  {% trans 'Most likely, after 5-10 minutes of trading, the price at which You can buy this product will be significantly lower than the initial one.' %}
+             </div>
+         </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+

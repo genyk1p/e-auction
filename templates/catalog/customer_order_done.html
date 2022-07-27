@@ -1,0 +1,30 @@
+{% extends 'catalog/base_generic.html' %}
+{% load i18n %}
+
+{% block title %}{% endblock %}
+{% block Description %}content=""{% endblock Description %}
+
+{% block content %}
+        <h4 class="title is-4">{% trans 'Order information' %}</h4>
+         <table class="table is-striped" >
+             <tr>
+                 <td><li>{% trans 'Product name: ' %}</li></td><td align="left">{{order.product.name}}</td>
+             </tr>
+             <tr>
+                 <td><li>{% trans 'Product overview: ' %}</li></td><td align="left">{% autoescape off %}{{order.product.content}}{% endautoescape %}</td>
+             </tr>
+             <tr>
+                 <td><li>{% trans 'Fraction: ' %}</li></td><td align="left">{{order.fraction}}</td>
+             </tr>
+             <tr>
+                 <td><li>{% trans 'Options descriptions: ' %}</li></td><td align="left">{% autoescape off %}{{order.label_value1}}{% endautoescape %}</td>
+             </tr>
+             <tr>
+                 <td><li>{% trans 'Driver: ' %}</li></td><td align="left">{{order.user_driver}}</td>
+             </tr>
+             <tr>
+                 <td><li>{% trans 'Price: ' %}</li></td><td align="left">{{order.total}}&nbsp;Euro</td>
+             </tr>
+         </table>
+    <a class="button is-link" href="javascript:history.go(-1)">{% trans 'Back' %}</a>
+{% endblock content %}

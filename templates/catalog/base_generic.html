@@ -1,0 +1,250 @@
+{% load static bulma_tags %}
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="verify-paysera" content="299e1e1e464591f0e3fc58cfa7e3a9a7">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% endblock title %}</title>
+    <link rel="shortcut icon" type="image/png" href="{% static "favicon.ico" %}">
+  <meta name="description" {% block Description %}{% endblock Description %} />
+  {% block css %}
+    {% font_awesome %}
+    <link rel="stylesheet" href="{% static 'bulma/css/style.min.css' %}">
+    {% block extra_css %}{% endblock extra_css %}
+  {% endblock css %}
+    {% block verification %}{% endblock verification %}
+
+</head>
+<body>
+
+{% block header %}
+
+  <div class="container">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+      {% if user.is_authenticated %}
+        <a class="navbar-item" href={% url 'index' %}>
+          <img src="{% static '1.png' %}" width="30" height="30">
+        </a>
+      {% else %}
+        <a class="navbar-item" href={% url 'index' %}>
+          <img src="{% static '1.png' %}" width="30" height="30">
+        </a>
+      {% endif %}
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
+
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});
+    </script>
+
+
+  <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="{% url 'index' %}">
+              {% trans 'Home' %}
+          </a>
+    {#      <a class="navbar-item" href="{% url 'products' %}">#}
+    {#          {% trans 'Products' %}#}
+{#          </a>#}
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+                {% trans 'Products' %}
+            </a>
+            <div class="navbar-dropdown">
+                <a class="navbar-item" href="{% url 'products' 'raid-EU'%}">
+                    {% trans 'Loot Raid (EU)' %}
+                </a>
+                <a class="navbar-item" href="{% url 'products' 'Mythic-Dungeons'%}">
+                    {% trans 'Mythic+ Dungeons (EU)' %}
+                </a>
+                <a class="navbar-item" href="{% url 'products' 'Dungeons-EU'%}">
+                    {% trans 'Dungeons and Torghast (EU)' %}
+                </a>
+            </div>
+
+          </div>
+
+          {% if user.is_authenticated %}
+          <a class="navbar-item" href="{% url 'customer-orders' %}">
+              {% trans 'My orders' %}
+          </a>
+          {% endif %}
+          {% if 'catalog.change_order' in perms %}
+          <a class="navbar-item" href="{% url 'requested-orders' %}">
+              {% trans 'Requested orders' %}
+          </a>
+          {% endif %}
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+                {% trans 'More' %}
+            </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="{% url 'information' 'contact'%}">
+                  {% trans 'Contact' %}
+              </a>
+              <a class="navbar-item" href="{% url 'information' 'privacy'%}">
+                  {% trans 'Privacy Policy' %}
+              </a>
+            <a class="navbar-item" href="{% url 'information' 'delivery'%}">
+                  {% trans 'Refund Policy' %}
+              </a>
+            <a class="navbar-item" href="{% url 'information' 'terms'%}">
+                  {% trans 'Terms & Conditions' %}
+              </a>
+
+             {% if user.is_authenticated %}
+              <a class="navbar-item" href="{% url 'account_settings' %}">
+                    {% trans 'Account settings' %}
+                 </a>
+                {% endif %}
+            </div>
+
+          </div>
+          {% if user.is_authenticated %}
+              <a class="navbar-item" href="">
+                  {% trans 'You are logged as: ' %}{{ user.username}}
+              </a>
+          {% endif %}
+        </div>
+
+    <div class="navbar-end">
+
+
+        <div class="navbar-item">
+           {% trans "Change language" as Change %}
+            {% load bulma_tags %}
+            <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}">
+                <div class="select is-rounded">
+                <select name="language">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %} input type="submit">
+                            {{ language.name_local }} ({{ language.code }})
+                        </option>
+                    {% endfor %}
+                </select>
+                </div>
+                <input type="submit" class='button is-primary' value='{{Change}}'>
+            </form>
+      </div>
+
+
+
+      <div class="navbar-item">
+        <div class="buttons">
+          {% if user.is_authenticated %}
+          <a class="button is-primary" href="{% url 'logout' %}">
+            <strong>{% trans 'Logout' %}</strong>
+          </a>
+          {% else %}
+          <a class="button is-primary" href=" {% url 'signup' %} ">
+            <strong>{% trans 'Sign up' %}</strong>
+          </a>
+          <a class="button is-light" href="{% url 'login'%}">
+          {% trans 'Log in' %}
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+  </div>
+{% endblock header %}
+
+{% block hero %}{% endblock hero %}
+
+<section class="section">
+  <div class="container">
+    {% block messages %}
+      {% if messages %}
+        <div class="messages columns is-desktop">
+          <div class="column is-4 is-offset-4">
+            {% for message in messages %}
+              <div class="message {% if message.tags %}is-{{ message.tags|bulma_message_tag }}{% endif %}">
+                <div class="message-body">{{ message }}</div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    {% endblock messages %}
+
+    {% block content_area %}
+      {% block content_title %}{% endblock content_title %}
+      {% block content %}{% endblock content %}
+    {% endblock content_area %}
+  </div>
+</section>
+
+{% block modal %}{% endblock modal %}
+
+{% block footer %}
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          <strong>{% trans 'World of Warcraft boosting Platform' %}</strong>
+        </p>
+      </div>
+        <div class="columns">
+        <div class="column">
+        </div>
+  </footer>
+{% endblock footer %}
+
+{% block javascript %}
+    <script type="text/javascript">
+    setTimeout(function() {
+    window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+    d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+    _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+    $.src="https://v2.zopim.com/?3P624JM6YZd090gjDbVds03HEWdZvgR3";z.t=+new Date;$.
+    type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+    }, 3000);
+</script>
+
+
+
+  {% block extra_javascript %}{% endblock extra_javascript %}
+{% endblock javascript %}
+</body>
+</html>

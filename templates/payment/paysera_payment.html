@@ -1,0 +1,52 @@
+{% extends 'catalog/base_generic.html' %}
+{% load i18n %}
+
+{% block content %}
+    <div class="content">
+    <h1>{% trans 'Order information:' %}</h1>
+
+             <table class="table is-striped" >
+                 <tr>
+                     <td><li>{% trans 'Product: ' %}</li></td><td align="left">{{ product }}</td>
+                 </tr>
+                 <tr>
+                     <td><li>{% trans 'Options descriptions: ' %}</li></td><td align="left">
+                     {% autoescape off %} {{ order.label_value }}{{ order.label_value_private }}</td>{% endautoescape %}
+                 </tr>
+                 <tr>
+                     <td><li>{% trans 'Driver: ' %}</li></td><td align="left">{{ Driver }}</td>
+                 </tr>
+                 <tr>
+                     {% if schedule == None %}
+                         <td><li>{% trans 'Order start date: ' %}</li></td><td align="left">{% trans 'Start within 30 minutes' %}</td>
+                     {% else %}
+                         <td><li>{% trans 'Order start date: ' %}</li></td><td align="left">{{ schedule }}</td>
+                     {% endif %}
+                 </tr>
+                 <tr>
+                     <td><li>{% trans 'Payment method: ' %}</li></td><td align="left">{{ Payment_method }}</td>
+                 </tr>
+                 <tr>
+                     <td><li>{% trans 'Amount: ' %}</li></td><td align="left">{{ amount }}&nbsp;Euro</td>
+                 </tr>
+             </table>
+    </div>
+        <div class="columns">
+            <div class="column is-5">
+                <a class="button is-link" href="javascript:history.go(-1)">{% trans 'Back' %}</a>
+            </div>
+            <div class="column is-7">
+                {% load bulma_tags %}
+                <form method="post" action="https://www.paysera.com/pay/">
+                {% csrf_token %}
+                <table>
+                  {{ PayseraPaymentForm |bulma }}
+                </table>
+                <input type="submit" class="button is-link" value='Pay' />
+                </form>
+            </div>
+        </div>
+
+{% endblock content %}
+{% block javascript %}
+{% endblock javascript %}

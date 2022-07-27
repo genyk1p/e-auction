@@ -1,0 +1,97 @@
+{% extends 'catalog/base_generic.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'My order ' %}{% endblock %}
+{% block Description %}{% endblock Description %}
+
+{% block content %}
+    {% if  var1 != None %}
+    <div class="notification is-danger">
+      {{ var1 }}
+    </div>
+    {% endif %}
+    {% if  pending_notification != None %}
+    <div class="{{ notification_class }}">
+        {{pending_notification}}
+    </div>
+    {% endif %}
+
+    <h4 class="title is-4">{% trans 'The choice of the driver and the price.' %}</h4>
+    <h5 class="title is-5">{% trans 'To place an order, please select driver and price from the list below:' %}</h5>
+    <h6 class="title is-6">{% trans "We draw your attention: after choosing the driver and the price offered by him, you will proceed to the next stage of ordering and bidding for the order will be terminated. Any other drivers would not make a better offer for the current order." %}</h6>
+        <form method="post" action="">
+            <table class="table is-striped">
+                <tr>
+                    <th>
+                    </th>
+                    <th align="center">
+                        <strong>{% trans 'Product name:' %} </strong>
+                    </th>
+                    <th align="center">
+                        <strong>{% trans 'Price:' %} </strong>
+                    </th>
+                    <th align="center">
+                        <strong>{% trans 'Driver:' %} </strong>
+                    </th>
+                    <th align="center">
+                         <strong>{% trans 'Driver done orders quantity:' %} </strong>
+                    </th>
+                    <th align="center">
+                         <strong>{% trans 'Driver rating:' %} </strong>
+                    </th>
+                    <th align="center">
+                         <strong>{% trans 'Driver rank:' %} </strong>
+                    </th>
+                    {% if schedule_marker != False %}
+                    <th align="center">
+                         <strong>{% trans 'Schedule:' %} </strong>
+                    </th>
+                    {% endif %}
+                </tr>
+                    {% csrf_token %}
+                    {% for bidedorder in bidedorders %}
+                        <tr>
+                            <th>
+                                <label class="radio"> <input type="radio" name="answer" value={{ bidedorder.id }}></label>
+                            </th>
+                            <th align="center">
+                                {{ bidedorder.order_product_name }}
+                            </th>
+                            <th align="center">
+                                {{bidedorder.total}}&nbsp EURO
+                            </th>
+                            <th align="center">
+                                {{ bidedorder.bidedorder_user_driver}}
+                            </th>
+                            <th align="center">
+                                {{ bidedorder.driver_number_done_orders}}
+                            </th>
+                            <th align="center">
+                                {{ bidedorder.driver_rating}}
+                            </th>
+                            <th align="center">
+                                {{ bidedorder.driver_rank}}
+                            </th>
+                            {% if bidedorder.schedule1 != None %}
+                            <th align="center">
+                                {% if bidedorder.schedule1 != None %}{{ bidedorder.schedule1 }}<br>{% endif %}
+                                {% if bidedorder.schedule2 != None %}{{ bidedorder.schedule2 }}<br>{% endif %}
+                                {% if bidedorder.schedule3 != None %}{{ bidedorder.schedule3 }}<br>{% endif %}
+                                {% if bidedorder.schedule4 != None %}{{ bidedorder.schedule4 }}<br>{% endif %}
+                            </th>
+                             {% endif %}
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <th align="center">
+                                <label class="radio"> <input type="radio" name="answer" value='Cancel order'></label>
+                            </th>
+                            <th align="center">
+                                <p>{% trans 'Cancel order' %}</p>
+                            </th>
+                        </tr>
+
+            </table>
+            <button class="button is-primary" type="submit">Submit</button>
+        </form>
+{% endblock content %}

@@ -1,0 +1,1289 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# nstopboost.com
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-05 20:25+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\catalog\form.py:12
+msgid "Please write your review"
+msgstr "Пожалуйста напишите отзыв"
+
+#: .\catalog\form.py:12
+msgid "Select rating"
+msgstr "Выберите рейтинг:"
+
+#: .\catalog\form.py:18
+msgid "Specify the start time of the order "
+msgstr "Укажите время старта выполнения заказа "
+
+#: .\catalog\form.py:20
+msgid ""
+", write a colon separated for example 21:00 (21-00 or 21.00 will not work!)"
+msgstr ""
+", писать через двоеточие например 21:00 (21-00 или 21.00 не будет работать!)"
+
+#: .\catalog\form.py:21 .\catalog\form.py:64 .\catalog\temp\1.txt:185
+#: .\templates\catalog\customer_order.html:31
+#: .\templates\catalog\delet-bided-order.html:29
+#: .\templates\payment\pre_payment.html:40
+msgid "Price:"
+msgstr "Цена:"
+
+#: .\catalog\form.py:22
+msgid ""
+"Indicate the price in rubles according to which you are ready to fulfill the "
+"order"
+msgstr "Укажите цену в рублях согласно которой вы готовы выполнить заказ"
+
+#: .\catalog\form.py:24
+msgid "Order start date"
+msgstr "Дата начала выполнения заказа"
+
+#: .\catalog\form.py:25
+msgid ""
+"Indicate the start date of the order, for example, if the order is a raid "
+"that you do on schedule, then indicate all the possible options for this "
+"raid - a maximum of 4 dates can be specified"
+msgstr ""
+"Укажите дату начала выполнения заказа, например если заказ является рейдом "
+"который вы делаете по расписанию, то укажите все возможные варианты "
+"проведения этого рейда, максимум можно указать 4 даты"
+
+#: .\catalog\form.py:30
+msgid ""
+"Specify the start time of order execution CET / CEST (Central European time, "
+"winter / summer, respectively). Differs from \"MSK\" by +2 hours winter and "
+"+1 hour summer)"
+msgstr ""
+"Укажите время начала выполнения заказа CET/CEST (центрально европейское "
+"время, зимнее/летнее соответственно). Отличается от МСК на +2 часа зима и +1 "
+"час лето)"
+
+#: .\catalog\form.py:34
+msgid "Specify a second start date for the order fulfillment, if needed"
+msgstr "Укажите вторую дату начала выполнения заказа, если это нужно"
+
+#: .\catalog\form.py:38
+msgid "Specify the second start time of the order"
+msgstr "Укажите второе время начала выполнения заказа"
+
+#: .\catalog\form.py:43
+msgid "Specify a third product start date, if needed"
+msgstr "Укажите третью дату начала выполнения заказа, если это нужно"
+
+#: .\catalog\form.py:47
+msgid "Specify a third order start date, if needed"
+msgstr "Укажите третью дату начала выполнения заказа, если это нужно"
+
+#: .\catalog\form.py:52
+msgid "Specify a fourth order start date, if needed"
+msgstr "Укажите четвертую дату начала выполнения заказа, если это нужно"
+
+#: .\catalog\form.py:56
+msgid "Specify the fourth start time of the order"
+msgstr "Укажите четвертое время начала выполнения заказа"
+
+#: .\catalog\form.py:65
+msgid "Indicate the price in rubles acceptable to you for order fulfillment"
+msgstr "Укажите цену в рублях согласно которой вы готовы выполнить заказ"
+
+#: .\catalog\temp\1.txt:166 .\templates\catalog\customer_order.html:28
+#: .\templates\catalog\delet-bided-order.html:26
+#: .\templates\payment\pre_payment.html:16
+msgid "Product name:"
+msgstr "Название продукта: "
+
+#: .\catalog\temp\1.txt:169 .\templates\payment\pre_payment.html:24
+msgid "Fraction:"
+msgstr "Фракция:"
+
+#: .\catalog\temp\1.txt:172 .\templates\payment\pre_payment.html:20
+msgid "Options descriptions:"
+msgstr "Описание опций:"
+
+#: .\catalog\temp\1.txt:176 .\templates\catalog\customer_order.html:34
+#: .\templates\payment\pre_payment.html:28
+msgid "Driver:"
+msgstr "Драйвер:"
+
+#: .\catalog\temp\1.txt:179
+msgid "Driver done orders:"
+msgstr "Количество заказов выполненное драйвером:"
+
+#: .\catalog\temp\1.txt:182 .\templates\catalog\customer_order.html:40
+#: .\templates\payment\pre_payment.html:36
+msgid "Driver rating:"
+msgstr "Рейтинг драйвера:"
+
+#: .\catalog\temp\1.txt:190
+msgid ""
+"If you want change your driver and price please select it below, or you can "
+"click \"Pay\" in this way your will work with current driver."
+msgstr ""
+"Если вы хотите изменить драйвера и цену, вы можете это сделать в форме "
+"которая находится ниже, или вы можете кликнуть \"Оплатить\" и в этом случае "
+"в качестве исполнителя заказа будет выбран текущий драйвер."
+
+#: .\catalog\temp\1.txt:192
+msgid "Pay"
+msgstr "Оплатить"
+
+#: .\catalog\temp\views.py:109 .\catalog\views.py:163
+msgid "Please select your character fraction"
+msgstr "Пожалуйста, укажите фракцию вашего персонажа"
+
+#: .\catalog\temp\views.py:139
+msgid "Maximum trading time for an order(minutes)"
+msgstr "Максимальное время торгов по заказу (минуты)"
+
+#: .\catalog\temp\views.py:426 .\catalog\views.py:563
+msgid "You have successfully canceled your order."
+msgstr "Вы успешно отменили свой заказ"
+
+#: .\catalog\temp\views.py:452
+msgid "Unfortunately, there are no active offers for this order yet."
+msgstr "К сожалению, по данному продукту еще нет предложений от драйверов"
+
+#: .\catalog\temp\views.py:476
+msgid "No review available"
+msgstr "Нет доступных отзывов"
+
+#: .\catalog\temp\views.py:477 .\catalog\views.py:624
+msgid "No rating"
+msgstr "Нет рейтинга"
+
+#: .\catalog\temp\views.py:627
+msgid ""
+"You have successfully added your vacancy to the list of drivers for this "
+"order."
+msgstr ""
+"Ваша вакансия была успешно добавлена в список потенциальных исполнителей по "
+"этому заказу"
+
+#: .\catalog\temp\views.py:839 .\catalog\views.py:1047
+msgid "You have successfully deleted your bid"
+msgstr "Вы успешно удалили свою ставку"
+
+#: .\catalog\temp\views.py:843 .\catalog\views.py:1051
+msgid ""
+"Unfortunately, it is no longer possible to cancel the bid, because the buyer "
+"went to the ordering procedure or canceled the order."
+msgstr ""
+"К сожалению уже нельзя отменить ставку, так как покупатель перешел к "
+"процедуре оформления заказа или отменил его"
+
+#: .\catalog\temp\views.py:853
+msgid "Sorry, the driver canceled the current offer, please try another offer."
+msgstr ""
+"К сожалению драйвер отменил текущее предложение, пожалуйста выберите другое "
+"предложение из списка"
+
+#: .\catalog\views.py:83 .\catalog\views.py:85
+msgid "This order can be done only in SelfPlay"
+msgstr "Этот заказ можно сделать только в SelfPlay."
+
+#: .\catalog\views.py:196
+msgid "Maximum trading time for an order (minutes)"
+msgstr "Максимальное время торгов по заказу (минуты)"
+
+#: .\catalog\views.py:200
+msgid "Verified drivers"
+msgstr "Проверенные драйверы"
+
+#: .\catalog\views.py:200
+msgid "All drivers"
+msgstr "Все драйверы"
+
+#: .\catalog\views.py:204
+msgid "Drivers rank:"
+msgstr "Рейтинг драйвера:"
+
+#: .\catalog\views.py:257
+msgid ""
+"Unfortunately, the order cannot be placed at the moment. Our service works "
+"from 8 am to 1 am (CEST), we will be glad to see you in the morning!"
+msgstr ""
+"К сожалению в данный момент нельзя разместить заказ. Наша служба работает "
+"с 8.00 до 01.00 (CEST), будем рады видеть Вас утром!"
+
+
+
+#: .\catalog\views.py:589
+msgid ""
+"Unfortunately, there are no active offers from the drivers for this order "
+"yet."
+msgstr "К сожалению, по данному продукту еще нет предложений от драйверов"
+
+#: .\catalog\views.py:593
+msgid ""
+"Please note that the bidding for this order has ended and drivers will no "
+"longer be able to add their vacancy to this order. If you are not satisfied "
+"with the trading results, you can create a new order."
+msgstr ""
+"Обращаем ваше внимание, что торги по данному заказу завершены и исполнители "
+"(драйверы) не уже не смогут добавить свою вакансию к этому заказу. Если вас "
+"не устраивают результаты торгов вы можете создать новый заказ."
+
+#: .\catalog\views.py:623
+msgid "No reviews available"
+msgstr "Нет доступных отзывов"
+
+#: .\catalog\views.py:708
+msgid ""
+"Unfortunately, you don't have authorization to see this page. This page is "
+"for drivers only. If you want to become a driver please contact the "
+"platform's administration."
+msgstr ""
+"К сожалению, у Вас нет разрешения на просмотр этой страницы. Эта страница "
+"доступна только для драйверов. Если Вы хотите стать драйвером, обратитесь к "
+"администрации платформы."
+
+#: .\catalog\views.py:726
+msgid "Unfortunately, you cannot make orders in Piloted mode yet."
+msgstr "К сожалению вы еще не можете делать заказы в режиме Piloted"
+
+#: .\catalog\views.py:734
+msgid ""
+"Unfortunately, you cannot place a bid on this order, because the customer "
+"selected only 'Verified driver' option, and you status is 'New'."
+msgstr ""
+"К сожалению вы не можете сделать ставку по текущему заказу, потому что "
+"покупатель выбралтолько проверенных драйверов в качестве исполнителей, а ваш "
+"статус 'New'."
+
+#: .\catalog\views.py:796
+msgid ""
+"You have successfully added your vacancy to the list of the potential "
+"drivers for this order."
+msgstr ""
+"Ваша вакансия была успешно добавлена в список потенциальных исполнителей по "
+"этому заказу"
+
+#: .\catalog\views.py:820
+msgid ""
+"This order is waiting for payment, You can see the information after the "
+"payment would be done."
+msgstr ""
+"Этот заказ находится в состоянии ожидания оплаты, информация по данному "
+"заказу будет доступна после оплаты."
+
+#: .\catalog\views.py:858
+msgid ""
+"Unfortunately you cannot make bid by this order because customer selected "
+"only 'Verified driver' option, and you status is 'New'."
+msgstr ""
+"К сожалению вы не можете сделать ставку по текущему заказу, потому что "
+"покупатель выбралтолько проверенных драйверов в качестве исполнителей, а ваш "
+"статус 'New'."
+
+#: .\catalog\views.py:1061
+msgid ""
+"Sorry, the driver canceled the current offer, please try another offer from "
+"the list."
+msgstr ""
+"К сожалению драйвер отменил текущее предложение, пожалуйста выберите другое "
+"предложение из списка"
+
+#: .\payment\views.py:177
+msgid "Select payment method:"
+msgstr "Выберете способ оплаты:"
+
+#: .\payment\views.py:183
+msgid "Select schedule:"
+msgstr "Выберите расписание:"
+
+#: .\payment\views.py:406
+msgid ""
+"Your order has been successfully paid. Please write your order id to the "
+"operator in online chat (bottom left corner). "
+msgstr ""
+"Ваш заказ был успешно оплачен. Пожалуйста напишите номер вашего заказа "
+"оператору в онлайн чат (нижний левый угол)."
+
+#: .\payment\views.py:414
+msgid ""
+"Sorry, Your payment was not successful, please try again or contact our "
+"support."
+msgstr ""
+"К сожалению Ваш платеж был не успешным, пожалуйста попробуйте выполнить его "
+"еще раз или обратитесь в поддержку."
+
+#: .\registration\form.py:29
+msgid "Please enter email confirmation code"
+msgstr "Пожалуйста, введите проверочный код"
+
+#: .\registration\form.py:44
+msgid "Invalid confirmation code"
+msgstr "Неверный код подтверждения"
+
+#: .\registration\views.py:31
+msgid ""
+"To confirm registration on https://nstopboost.com/ please follow the link "
+msgstr ""
+"Для завершения регистрации на https://nstopboost.com/ пожалуйста перейдите "
+"по ссылке "
+
+#: .\registration\views.py:32
+msgid "or enter this code "
+msgstr "или введите этот код "
+
+#: .\registration\views.py:33
+msgid " on the E-mail confirmation page. "
+msgstr " на странице подтверждения регистрационного кода. "
+
+#: .\registration\views.py:34
+msgid "E-mail confirmation code and link will be valid for 30 minutes. "
+msgstr "Код подтверждения и ссылка будут действительны в течении 30 минут. "
+
+#: .\registration\views.py:35
+msgid "Best wishes, administration of nstopboost.com"
+msgstr "С наилучшими пожеланиями, администрация nstopboost.com"
+
+#: .\registration\views.py:37
+msgid "Registrations on nstopboost.com "
+msgstr "Регистрация на nstopboost.com "
+
+#: .\templates\catalog\account_settings.html:5
+#: .\templates\catalog\account_settings.html:6
+#: .\templates\catalog\account_settings.html:11
+msgid "Account settings: "
+msgstr "Настройки учетной записи"
+
+#: .\templates\catalog\account_settings.html:9
+msgid "Change"
+msgstr "Изменить"
+
+#: .\templates\catalog\account_settings.html:12
+msgid "Change password"
+msgstr "Изменить пароль"
+
+#: .\templates\catalog\account_settings.html:14
+msgid "Select Language:"
+msgstr "Выберите язык:"
+
+#: .\templates\catalog\account_settings.html:34
+msgid "Quantity of completed orders: "
+msgstr "Количество выполненных заказов: "
+
+#: .\templates\catalog\account_settings.html:35
+msgid "Rating: "
+msgstr "Рейтинг: "
+
+#: .\templates\catalog\account_settings.html:36
+msgid "Can do order in piloted mode: "
+msgstr "Может делать заказы в режиме piloted: "
+
+#: .\templates\catalog\account_settings.html:37
+msgid "Driver rank: "
+msgstr "Ранг драйвера: "
+
+#: .\templates\catalog\base_generic.html:77
+msgid "Home"
+msgstr "Главная"
+
+#: .\templates\catalog\base_generic.html:84
+msgid "Products"
+msgstr "Продукты"
+
+#: .\templates\catalog\base_generic.html:88
+msgid "Loot Raid (EU)"
+msgstr "Лут рейды (ЕУ)"
+
+#: .\templates\catalog\base_generic.html:91
+msgid "Mythic+ Dungeons (EU)"
+msgstr "Мифик+ подземелья (EU)"
+
+#: .\templates\catalog\base_generic.html:94
+msgid "Dungeons and Torghast (EU)"
+msgstr "Подземелья и Торгаст (ЕУ)"
+
+#: .\templates\catalog\base_generic.html:102
+msgid "My orders"
+msgstr "Мои заказы"
+
+#: .\templates\catalog\base_generic.html:107
+msgid "Requested orders"
+msgstr "Активные предложения"
+
+#: .\templates\catalog\base_generic.html:113
+msgid "More"
+msgstr "Еще"
+
+#: .\templates\catalog\base_generic.html:118
+msgid "Contact"
+msgstr "Контакты"
+
+#: .\templates\catalog\base_generic.html:121
+msgid "Privacy Policy"
+msgstr ""
+
+#: .\templates\catalog\base_generic.html:124
+msgid "Refund Policy"
+msgstr ""
+
+#: .\templates\catalog\base_generic.html:127
+msgid "Terms & Conditions"
+msgstr ""
+
+#: .\templates\catalog\base_generic.html:132
+msgid "Account settings"
+msgstr "Настройки учетной записи"
+
+#: .\templates\catalog\base_generic.html:140
+msgid "You are logged as: "
+msgstr "Вы вошли как: "
+
+#: .\templates\catalog\base_generic.html:149
+msgid "Change language"
+msgstr "Сменить язык"
+
+#: .\templates\catalog\base_generic.html:175
+msgid "Logout"
+msgstr "Выйти"
+
+#: .\templates\catalog\base_generic.html:179
+msgid "Sign up"
+msgstr "Зарегистрироваться"
+
+#: .\templates\catalog\base_generic.html:182
+#: .\templates\registration\login.html:15
+#: .\templates\registration\password_reset_complete.html:11
+msgid "Log in"
+msgstr "Авторизоваться"
+
+#: .\templates\catalog\base_generic.html:225
+msgid "World of Warcraft boosting Platform"
+msgstr "WoW буст Платформа"
+
+#: .\templates\catalog\customer_complited_order.html:4
+msgid "Completed order"
+msgstr "Завершённые заказы"
+
+#: .\templates\catalog\customer_complited_order.html:8
+msgid "Product name"
+msgstr "Название продукта "
+
+#: .\templates\catalog\customer_complited_order.html:9
+#: .\templates\catalog\customer_orders.html:32
+#: .\templates\catalog\customer_orders_filter.html:35
+#: .\templates\catalog\requested_order_for_drivers.html:36
+#: .\templates\catalog\requested_orders_for_drivers.html:33
+msgid "Driver"
+msgstr "Драйвер"
+
+#: .\templates\catalog\customer_complited_order.html:10
+#: .\templates\catalog\requested_order_for_drivers.html:27
+#: .\templates\catalog\requested_order_for_drivers_by_status.html:23
+msgid "Price"
+msgstr "Цена"
+
+#: .\templates\catalog\customer_complited_order.html:11
+msgid "Review"
+msgstr "Отзыв"
+
+#: .\templates\catalog\customer_complited_order.html:12
+msgid "Rating"
+msgstr "Рейтинг"
+
+#: .\templates\catalog\customer_complited_order.html:15
+#: .\templates\catalog\customer_orders_filter.html:87
+#: .\templates\catalog\product.html:40
+#: .\templates\registration\enter_email_confirm_code.html:9
+msgid "Submit"
+msgstr "Применить"
+
+#: .\templates\catalog\customer_order.html:4
+msgid "My order "
+msgstr "Мои заказ "
+
+#: .\templates\catalog\customer_order.html:19
+msgid "The choice of the driver and the price."
+msgstr "Выбор исполнителя и цены."
+
+#: .\templates\catalog\customer_order.html:20
+msgid "To place an order, please select driver and price from the list below:"
+msgstr ""
+"Для того, чтобы оформить заказ, выберите исполнителя и цену из списка ниже:"
+
+#: .\templates\catalog\customer_order.html:21
+msgid ""
+"We draw your attention: after choosing the driver and the price offered by "
+"him, you will proceed to the next stage of ordering and bidding for the "
+"order will be terminated. Any other drivers would not make a better offer "
+"for the current order."
+msgstr ""
+"Обращаем ваше внимание: после выбора исполнителя и предложенной им цены Вы "
+"перейдете на следующий этап оформления заказа и торги по заказу будут "
+"прекращены. Никакой другой исполнитель не сможет сделать более выгодное "
+"предложение по текущему заказу."
+
+#: .\templates\catalog\customer_order.html:37
+#: .\templates\payment\pre_payment.html:32
+msgid "Driver done orders quantity:"
+msgstr "Количество заказов выполненное драйвером:"
+
+#: .\templates\catalog\customer_order.html:43
+msgid "Driver rank:"
+msgstr "Ранг драйвера:"
+
+#: .\templates\catalog\customer_order.html:47
+msgid "Schedule:"
+msgstr "Расписание:"
+
+#: .\templates\catalog\customer_order.html:90
+msgid "Cancel order"
+msgstr "Отменить заказ"
+
+#: .\templates\catalog\customer_order_done.html:8
+msgid "Order information"
+msgstr "Информация о заказе"
+
+#: .\templates\catalog\customer_order_done.html:11
+#: .\templates\catalog\product.html:11
+#: .\templates\catalog\requested_order_for_drivers_extended.html:12
+msgid "Product name: "
+msgstr "Имя продукта: "
+
+#: .\templates\catalog\customer_order_done.html:14
+#: .\templates\catalog\product.html:14
+msgid "Product overview: "
+msgstr "Обзор продукта: "
+
+#: .\templates\catalog\customer_order_done.html:17
+msgid "Fraction: "
+msgstr "Фракция: "
+
+#: .\templates\catalog\customer_order_done.html:20
+#: .\templates\payment\payment.html:13
+#: .\templates\payment\paysera_payment.html:13
+msgid "Options descriptions: "
+msgstr "Описание опций: "
+
+#: .\templates\catalog\customer_order_done.html:23
+#: .\templates\payment\payment.html:17
+#: .\templates\payment\paysera_payment.html:17
+msgid "Driver: "
+msgstr "Драйвер: "
+
+#: .\templates\catalog\customer_order_done.html:26
+msgid "Price: "
+msgstr "Цена: "
+
+#: .\templates\catalog\customer_order_done.html:29
+#: .\templates\payment\payment.html:35
+#: .\templates\payment\paysera_payment.html:35
+msgid "Back"
+msgstr "Назад"
+
+#: .\templates\catalog\customer_orders.html:12
+msgid "Show all orders"
+msgstr "Показать все заказы"
+
+#: .\templates\catalog\customer_orders.html:23
+msgid "Order Id"
+msgstr "Номер заказа"
+
+#: .\templates\catalog\customer_orders.html:26
+#: .\templates\catalog\customer_orders_filter.html:29
+#: .\templates\catalog\requested_order_for_drivers.html:24
+#: .\templates\catalog\requested_order_for_drivers_by_status.html:20
+#: .\templates\catalog\requested_orders_for_drivers.html:21
+#: .\templates\catalog\show_all_products.html:30
+msgid "Product Name"
+msgstr "Имя продукта "
+
+#: .\templates\catalog\customer_orders.html:29
+#: .\templates\catalog\customer_orders_filter.html:32
+msgid "Status"
+msgstr "Статус"
+
+#: .\templates\catalog\customer_orders.html:35
+#: .\templates\catalog\customer_orders_filter.html:38
+#: .\templates\catalog\requested_orders_for_drivers.html:24
+msgid "Product overview"
+msgstr "Описание продукта "
+
+#: .\templates\catalog\customer_orders.html:38
+#: .\templates\catalog\customer_orders_filter.html:41
+#: .\templates\catalog\requested_orders_for_drivers.html:27
+msgid "Current price"
+msgstr "Текущая цена"
+
+#: .\templates\catalog\customer_orders.html:68
+#: .\templates\catalog\customer_orders_filter.html:69
+#: .\templates\catalog\customer_orders_filter.html:71
+#: .\templates\catalog\requested_order_for_drivers_by_status.html:48
+#: .\templates\catalog\requested_order_for_drivers_by_status.html:50
+#: .\templates\catalog\requested_orders_for_drivers.html:93
+#: .\templates\catalog\requested_orders_for_drivers.html:95
+msgid "Previous page"
+msgstr "Предыдущая страница"
+
+#: .\templates\catalog\customer_orders.html:71
+#: .\templates\catalog\customer_orders.html:73
+#: .\templates\catalog\customer_orders_filter.html:74
+#: .\templates\catalog\customer_orders_filter.html:76
+#: .\templates\catalog\requested_order_for_drivers_by_status.html:53
+#: .\templates\catalog\requested_order_for_drivers_by_status.html:55
+#: .\templates\catalog\requested_orders_for_drivers.html:98
+#: .\templates\catalog\requested_orders_for_drivers.html:100
+msgid "Next page"
+msgstr "Следующая страница"
+
+#: .\templates\catalog\customer_orders.html:75
+msgid "Filter"
+msgstr "Фильтр"
+
+#: .\templates\catalog\customer_orders_filter.html:12
+msgid "Orders with order status: "
+msgstr "Заказы со статусом: "
+
+#: .\templates\catalog\customer_orders_filter.html:26
+msgid "Order ID"
+msgstr "Номер заказа"
+
+#: .\templates\catalog\delet-bided-order.html:5
+#: .\templates\catalog\requested_order_for_drivers.html:5
+msgid "Active order information for drivers"
+msgstr "Информация о заказе для драйверов"
+
+#: .\templates\catalog\delet-bided-order.html:16
+msgid ""
+"If you want to cancel a bet, select the bet you need and click the cancel "
+"button."
+msgstr ""
+"Если вы хотите отменить ставку, пожалуйста выберите ставку и кликните по "
+"кнопке отменить."
+
+#: .\templates\catalog\delet-bided-order.html:23
+msgid "Order id:"
+msgstr "Номер заказа:"
+
+#: .\templates\catalog\delet-bided-order.html:51
+msgid "Cancel Bid"
+msgstr "Отменить ставку"
+
+#: .\templates\catalog\index.html:4
+msgid "WoW boost platform."
+msgstr "ВоВ буст платформа"
+
+#: .\templates\catalog\index.html:6
+#: .\templates\catalog\show_all_products.html:5
+msgid ""
+"On our platform, You can buy loot raid or dungeon boost directly from "
+"booster team at a minimum price"
+msgstr ""
+"На нашей платформе Вы можете купить лут рейд или буст в подземельях "
+"непосредственно у команды бустеров по минимальной цене"
+
+#: .\templates\catalog\index.html:14
+msgid "Welcome to nstopboost.com, the WoW boost Platform."
+msgstr "Добро пожаловать на WoW буст платформу nstopboost.com."
+
+#: .\templates\catalog\index.html:17
+msgid ""
+"Here You can buy boosts directly from the booster team at the lowest price."
+msgstr ""
+"Здесь Вы можете купить буст непосредственно у команды бустеров по "
+"минимальной цене "
+
+#: .\templates\catalog\index.html:26
+msgid "Briefly about how it works:"
+msgstr "Кратко о том, как это работает: "
+
+#: .\templates\catalog\index.html:27
+msgid ""
+"Our staff places on the platform the service templates with an initial price "
+"and a detailed description of the service."
+msgstr ""
+"Наши сотрудники размещают на платформе шаблоны товаров с начальной ценой и "
+"подробным описанием."
+
+#: .\templates\catalog\index.html:28
+msgid ""
+"The customer chooses which service is of interest to him and starts trading "
+"for it."
+msgstr ""
+"Клиент выбирает, какой товар ему интересен и размещает предварительную "
+"заявку."
+
+#: .\templates\catalog\index.html:29
+msgid "Information about the start of the trading is sent to all our boosters."
+msgstr "Информация о начале торгов рассылается всем нашим бустерам."
+
+#: .\templates\catalog\index.html:30
+msgid ""
+"Boosters begin to compete with each other for the right to fulfill this "
+"order, by reducing the cost of the service."
+msgstr ""
+"Бустеры начинают соревноваться между собой за право выполнить услугу, снижая "
+"первоначальную стоимость товара."
+
+#: .\templates\catalog\index.html:32
+msgid "The advantages of our platform:"
+msgstr "Преимущества нашей платформы."
+
+#: .\templates\catalog\index.html:33
+msgid ""
+"As a result of bidding for the service (healthy competition among boosters), "
+"the customer gets the opportunity to buy the service at the lowest price."
+msgstr ""
+"В результате аукциона по услуге (здоровая конкуренция между бустерами) "
+"клиент получает возможность купить товар (сервис) по самой низкой цене."
+
+#: .\templates\catalog\index.html:34
+msgid ""
+"Upon completion of the order, the customer can leave feedback on the "
+"booster. Based on the feedback, the platform automatically calculates the "
+"booster rating."
+msgstr ""
+"По завершении заказа покупатель может оставить отзыв о бустере. На основе "
+"отзывов платформа автоматически рассчитывает рейтинг бустера."
+
+#: .\templates\catalog\index.html:35
+msgid ""
+"Analysis of the price of the service and the rating of the booster allows "
+"the customer to choose exactly the option that he needs."
+msgstr ""
+"Анализ стоимости товара (сервиса) и рейтинга бустера позволяет заказчику "
+"выбрать именно тот вариант, который ему нужен."
+
+#: .\templates\catalog\index.html:37
+msgid "Now more detailed information about how it works."
+msgstr "Теперь подробнее о том, как это работает."
+
+#: .\templates\catalog\index.html:39
+msgid ""
+"As we have already written above, our staff places a product blank in which "
+"it is described in details what exactly needs to be done, for example, the "
+"Castle Nathria Heroic Loot run raid. We place popular products on the "
+"platform, attach them to the right categories and make sure that they are "
+"relevant. This approach allows the customer always to look only at relevant "
+"services, and not try to find something they need among a heap of irrelevant "
+"garbage. For a booster, this approach is beneficial as he does not need to "
+"come up with product descriptions, translate them into several languages and "
+"monitor the relevance of the information - the booster will do exactly what "
+"he knows the best, namely, to do a boost. All this allows our platform to "
+"attract more boosters. A larger number of boosters leads to a more "
+"competitive pricing of the service."
+msgstr ""
+"Как мы уже писали выше, наши сотрудники размещают шаблон продукта, в котором "
+"подробно описывается, что именно нужно сделать, например, рейд прохождения "
+"Castle Nathria Heroic Loot. Мы размещаем популярные товары на платформе, "
+"прикрепляем их к нужным категориям и следим за их актуальностью. Такой "
+"подход позволяет клиенту всегда просматривать только актуальные услуги, а не "
+"пытаться найти что-то нужное в большом количестве не структуризированных "
+"товаров. Для бустера такой подход выгоден тем, что ему не нужно придумывать "
+"описания продуктов, переводить их на несколько языков и следить за "
+"актуальностью информации - бустер будет делать именно то, что он умеет лучше "
+"всего, а именно играть. Все это позволяет нашей платформе привлекать больше "
+"бустеров. Чем больше количество бустеров, тем ниже цена товара (услуги)."
+
+#: .\templates\catalog\index.html:42
+msgid "A little more about the price."
+msgstr "Еще немного о цене."
+
+#: .\templates\catalog\index.html:44
+msgid ""
+"A fixed price for a service does not always allow You to effectively form a "
+"price for a service. For example, You want to buy a raid and place an order "
+"on our platform, and by pure chance, at the same moment, one of the booster "
+"teams starts this particular raid with another client, and they (boosters) "
+"have free space in the raid just for You. They do a raid not for You, but "
+"for the sake of someone else, and regardless of whether You buy this raid or "
+"not, they will go to this raid, but with Your order You will be a nice bonus "
+"for this boosters team, as a result, this team will most likely offer the "
+"minimum price for Your order and You can buy a boost for less than it "
+"actually costs if You buy it using the classic approach. And there can be a "
+"lot of such examples."
+msgstr ""
+"Фиксированная цена на товар (услугу) не всегда позволяет оптимально ее "
+"сформировать. Например, вы хотите купить рейд и разместить заказ на нашей "
+"платформе. По чистой случайности в тот же момент одна из команд бустеров "
+"готова начать этот конкретный рейд с другим клиентом и у них (бустеров) "
+"осталось свободное место в рейде. Они делают этот рейд не для Вас, а для "
+"другого заказчика. И не зависимо от того купите вы его или нет они все равно "
+"будут его делать, но благодаря вашему заказу они заработают больше. Скорее "
+"всего, эта команда предложит минимальную цену за выполнение Вашего заказ, и "
+"Вы сможете купить такой товар (услугу) дешевле, чем он стоит на самом деле, "
+"если Вы купите его, используя классический подход. И таких примеров может "
+"быть много."
+
+#: .\templates\catalog\index.html:47
+msgid "Now let's get back to the actual ordering process:"
+msgstr "А теперь вернемся собственно к процессу размещения заказа."
+
+#: .\templates\catalog\index.html:49
+msgid ""
+"After you have chosen the service You are interested in, trading begins for "
+"it. Information that trading for the service has started on the platform is "
+"sent to all our boosters. Boosters see Your order and make offers with a "
+"specified price. If the price offered by the booster is not the lowest, the "
+"booster sees it in his personal account and can offer a new price for the "
+"service (possibly even lower). After the expiration of the time specified by "
+"the customer during the formation of the order, the bidding for the order is "
+"terminated. The customer sees all the available offers from different "
+"boosters and can select the offer he needs and pay for it. Also, the "
+"customer does not have wait for the completion of the bidding for the order "
+"and select the offer he needs during the bidding process. For example, the "
+"bidding time was 30 minutes, but after 5 minutes of bidding, an offer was "
+"received from one of the boosters that satisfied the customer. In this case, "
+"the customer can stop waiting for the completion of the bidding for the "
+"order and pay for it immediately. Then everything happens as in our regular "
+"store, You write the order number to the operator in the online chat and "
+"follow his instructions."
+msgstr ""
+"После того, как Вы выбрали интересующий вас товар (услугу) по нему "
+"начинается торги. Информация о том, что размещена новая заявка на платформе, "
+"отправляется всем нашим бустерам. Бустеры видят Вашу предварительную заявку "
+"и делают предложения с определенной ценой. Если цена, предлагаемая бустером, "
+"не минимальная среди других предложений, то бустер видит ее в своем личном "
+"кабинете и может предложить новую цену за услугу (возможно более низкую). По "
+"истечении времени, указанного заказчиком при формировании заявки, торги "
+"прекращаются. Клиент видит все доступные предложения от разных бустеров и "
+"может выбрать нужное ему предложение и оплатить его. Кроме того, покупатель "
+"может не ждать завершения торгов по заявке и выбрать необходимое ему "
+"предложение в процессе торгов. Например, время торгов составляло 30 минут, "
+"но в течении 5 минут торгов было получено предложение от одного из бустеров, "
+"которое удовлетворяет покупателя. В этом случае покупатель может не ждать "
+"завершения торгов и оплатить товар по выбранной стоимости сразу же. "
+"Дальнейшие действия происходят в той же последовательности как в нашем "
+"обычном магазине, Вы пишете номер заказа оператору в онлайн-чате и следуете "
+"его инструкциям."
+
+#: .\templates\catalog\maximum_new_order_reached.html:8
+msgid ""
+"You have reached the maximum possible number of orders with the \"New\" "
+"status."
+msgstr ""
+"Вы достигли максимально возможного количества заказов со статусом  \"New\""
+
+#: .\templates\catalog\maximum_new_order_reached.html:9
+msgid ""
+"New - the order status for which the driver is currently being searched for."
+msgstr "Новый - статус заказа, по которому ведется поиск исполнителя."
+
+#: .\templates\catalog\maximum_new_order_reached.html:10
+msgid ""
+"To place a new order, You need either to wait for the completion of the "
+"searching of the Driver for the current order, or cancel one of the current "
+"orders using"
+msgstr ""
+"Чтобы разместить новый заказ, нужно либо дождаться завершения поиск Драйвера "
+"для текущего заказа или отменить один из текущих заказов используя"
+
+#: .\templates\catalog\maximum_new_order_reached.html:11
+#: .\templates\catalog\order_successful_add.html:10
+msgid "this link"
+msgstr "эту ссылку"
+
+#: .\templates\catalog\order_successful_add.html:8
+msgid "Your order has been successfully added to a driver search."
+msgstr "Ваш заказ был успешнр добавлен для поиска исполнителя."
+
+#: .\templates\catalog\order_successful_add.html:9
+msgid ""
+"You can see your orders for which the driver is currently being searched for "
+"at "
+msgstr ""
+"Вы можете просмотреть список своих заказов по которым ведется поиск "
+"исполнителя по"
+
+#: .\templates\catalog\product.html:19
+msgid "Description of option 'Drivers rank' : "
+msgstr "Описание опции Рейтинг драйвера"
+
+#: .\templates\catalog\product.html:20
+msgid ""
+"We draw Your attention to the fact that by choosing 'All drivers', all "
+"platform drivers will be able to offer themselves as a driver for Your "
+"order. Drivers not tested by our platform may have a poorer playing skill, "
+"which will lead to unnecessary wipes or delays in the provision of the "
+"service, but but You should take into consideration that these drivers can "
+"also perform the service significantly cheaper. If You want a guaranteed "
+"strong team, please choose 'Verified drivers'."
+msgstr ""
+"Мы обращаем Ваше внимание на то, что если Вы выбрали опцию все драйверы, то "
+"все драйверы платформы будут иметь возможность подать себя в качестве "
+"кандидатов на выполнение вашего заказа. Драйверы которые не проверены нашей "
+"платформой, возможно могут иметь более низкий скил игры чем у авторизованных "
+"драйверов, что в свою очередь может привести к лишним вайпам и задержкам в "
+"оказании сервиса, но также стоит учесть, что в этом случае итоговая цена "
+"продукта может быть существенно ниже. Если вы хотите гарантировано сильную "
+"команду, выбирайте драйверов верифицированных платформой."
+
+#: .\templates\catalog\product.html:26
+msgid "Product starting price: "
+msgstr "Стартовая цена продукта: "
+
+#: .\templates\catalog\requested_order_for_drivers.html:17
+msgid "Current offer:"
+msgstr "Текущее предложение::"
+
+#: .\templates\catalog\requested_order_for_drivers.html:21
+#: .\templates\catalog\requested_order_for_drivers_by_status.html:17
+#: .\templates\catalog\requested_orders_for_drivers.html:18
+msgid "Order id"
+msgstr "Номер заказа"
+
+#: .\templates\catalog\requested_order_for_drivers.html:30
+msgid "Minimal Price"
+msgstr "Минимальная цена"
+
+#: .\templates\catalog\requested_order_for_drivers.html:33
+#: .\templates\catalog\requested_order_for_drivers_by_status.html:26
+msgid "Order Status"
+msgstr "Статус заказа"
+
+#: .\templates\catalog\requested_order_for_drivers.html:57
+#: .\templates\catalog\requested_orders_for_drivers.html:67
+msgid "You"
+msgstr "Вы"
+
+#: .\templates\catalog\requested_order_for_drivers.html:59
+#: .\templates\catalog\requested_orders_for_drivers.html:69
+msgid "Not You"
+msgstr "Не Вы"
+
+#: .\templates\catalog\requested_order_for_drivers.html:64
+msgid "Описание продукта:"
+msgstr "Описание продукта"
+
+#: .\templates\catalog\requested_order_for_drivers.html:66
+msgid "Описание опций:"
+msgstr "Описание опций"
+
+#: .\templates\catalog\requested_order_for_drivers.html:75
+#: .\templates\catalog\requested_orders_for_drivers.html:86
+msgid "Bid"
+msgstr "Ставка"
+
+#: .\templates\catalog\requested_order_for_drivers.html:80
+msgid "To delete the \"BID\" for the current order, click on this link."
+msgstr ""
+"Для того чтобы удалить свою ставку из текущего заказа кликните по этой ссылке"
+
+#: .\templates\catalog\requested_order_for_drivers_extended.html:9
+msgid "Order number: "
+msgstr "Номер заказ"
+
+#: .\templates\catalog\requested_order_for_drivers_extended.html:15
+msgid "Product Description: "
+msgstr "Описание продукта:"
+
+#: .\templates\catalog\requested_order_for_drivers_extended.html:19
+msgid "Options descriptions"
+msgstr "Описание опций:"
+
+#: .\templates\catalog\requested_order_for_drivers_extended.html:23
+msgid "Total price RUB :"
+msgstr "Итого RUB"
+
+#: .\templates\catalog\requested_orders_for_drivers.html:30
+msgid "Minimal price"
+msgstr "Минимальная цена"
+
+#: .\templates\catalog\requested_orders_for_drivers.html:36
+msgid "Driver rank"
+msgstr "Ранг драйвера"
+
+#: .\templates\catalog\requested_orders_for_drivers.html:39
+msgid "Fraction"
+msgstr "Фракция"
+
+#: .\templates\catalog\requested_orders_for_drivers.html:42
+msgid "Mode"
+msgstr ""
+
+#: .\templates\catalog\requested_orders_for_drivers.html:45
+msgid "Action"
+msgstr "Действие"
+
+#: .\templates\catalog\requested_orders_for_drivers.html:104
+msgid "You are not authorized to view this page."
+msgstr "Вы не авторизованны чтобы видеть эту страницу"
+
+#: .\templates\catalog\show_all_products.html:4
+msgid "WoW boost platform"
+msgstr "ВоВ буст платформа"
+
+#: .\templates\catalog\show_all_products.html:13
+msgid "Welcome to platform nstopboost.com!"
+msgstr "Добро пожаловать на платформу nstopboost.com!"
+
+#: .\templates\catalog\show_all_products.html:16
+msgid ""
+"Here You can buy the boost directly from the booster team at the minimal "
+"price."
+msgstr ""
+"Здесь Вы можете купить буст непосредственно у команды бустеров по "
+"минимальной цене "
+
+#: .\templates\catalog\show_all_products.html:33
+msgid "Starting price"
+msgstr "Стартовая цена"
+
+#: .\templates\catalog\show_all_products.html:51
+msgid "What next?"
+msgstr "Что делать дальше?"
+
+#: .\templates\catalog\show_all_products.html:52
+msgid "How it works:"
+msgstr "Как это работает:"
+
+#: .\templates\catalog\show_all_products.html:53
+msgid "Select which product do you need"
+msgstr "Выберите нужный продукт"
+
+#: .\templates\catalog\show_all_products.html:54
+msgid "Start bidding on a product"
+msgstr "Начните торги по продукту"
+
+#: .\templates\catalog\show_all_products.html:55
+msgid "Wait for 5-10 minutes"
+msgstr "Подождите 5-10 минут"
+
+#: .\templates\catalog\show_all_products.html:56
+msgid "Choose the offer that suits You"
+msgstr "Выберите подходящее для Вас предложение"
+
+#: .\templates\catalog\show_all_products.html:57
+msgid "And that's all!"
+msgstr "И это все!"
+
+#: .\templates\catalog\show_all_products.html:59
+msgid ""
+"Most likely, after 5-10 minutes of trading, the price at which You can buy "
+"this product will be significantly lower than the initial one."
+msgstr ""
+"Скорее всего после, 5-10 минут торгов, цена по которой Вы сможете купить "
+"продукт будет существенно ниже начальной."
+
+#: .\templates\payment\payment.html:6
+#: .\templates\payment\paysera_payment.html:6
+msgid "Order information:"
+msgstr "Информация о заказе"
+
+#: .\templates\payment\payment.html:10
+#: .\templates\payment\paysera_payment.html:10
+msgid "Product: "
+msgstr "Имя продукта "
+
+#: .\templates\payment\payment.html:21 .\templates\payment\payment.html:23
+#: .\templates\payment\paysera_payment.html:21
+#: .\templates\payment\paysera_payment.html:23
+msgid "Order start date: "
+msgstr "Дата начала выполнения заказа"
+
+#: .\templates\payment\payment.html:21
+#: .\templates\payment\paysera_payment.html:21
+msgid "Start within 30 minutes"
+msgstr "Начало в течении 30 минут"
+
+#: .\templates\payment\payment.html:27
+#: .\templates\payment\paysera_payment.html:27
+msgid "Payment method: "
+msgstr "Способ оплаты"
+
+#: .\templates\payment\payment.html:30
+#: .\templates\payment\paysera_payment.html:30
+msgid "Amount: "
+msgstr "Сумма"
+
+#: .\templates\payment\pre_payment.html:15
+msgid "Product Description:"
+msgstr "Описание продукта:"
+
+#: .\templates\payment\pre_payment.html:51
+msgid "If You want to change the driver please click on this"
+msgstr "Если Вы хотите изменить исполнителя пожалуйста кликните по этой"
+
+#: .\templates\payment\pre_payment.html:52
+msgid "link"
+msgstr "ссылке"
+
+#: .\templates\payment\pre_payment.html:54
+msgid "Next"
+msgstr "Дальше"
+
+#: .\templates\registration\enter_email_confirm_code.html:4
+msgid ""
+"To complete registration, follow the link sent to the e-mail that You "
+"specified during registration or enter the verification code below."
+msgstr ""
+"Для завершения регистрации, пожалуйста перейдите по ссылке которую мы "
+"отправили на Вашу почту или введите проверочный код указанный ниже."
+
+#: .\templates\registration\enter_email_confirm_code.html:5
+msgid ""
+"If You have not received an e-mail within 10 minutes, please check Your spam "
+"folder."
+msgstr ""
+"Если Вы не получили регистрационное письмо в течении 10 минут, пожалуйста "
+"проверьте папку спам."
+
+#: .\templates\registration\logged_out.html:5
+msgid "Thanks for spending some time with the Web site today."
+msgstr "Спасибо, что провели сегодня немного времени на нашем сайте. "
+
+#: .\templates\registration\logged_out.html:6
+msgid "Log in again"
+msgstr "Войти снова"
+
+#: .\templates\registration\login.html:7
+msgid "Your username and password didn't match. Please try again."
+msgstr ""
+"Ваше имя пользователя и пароль не совпадают. Пожалуйста, попробуйте еще раз."
+
+#: .\templates\registration\login.html:9
+msgid "Please enter Your username (not email) and password."
+msgstr ""
+"Пожалуйста, введите Ваше имя пользователя (не адрес электронной почты) и "
+"пароль."
+
+#: .\templates\registration\login.html:13
+msgid "Reset password"
+msgstr "Сбросить пароль"
+
+#: .\templates\registration\password_change_done.html:7
+msgid "Your password was changed."
+msgstr "Ваш пароль был изменен."
+
+#: .\templates\registration\password_change_form.html:13
+msgid "Please correct the error below."
+msgstr "Пожалуйста, исправьте ошибку ниже."
+
+#: .\templates\registration\password_change_form.html:14
+msgid "Please correct the errors below. "
+msgstr "Пожалуйста, исправьте ошибку ниже. "
+
+#: .\templates\registration\password_change_form.html:18
+msgid ""
+"Please enter Your old password, for security's sake, and then enter Your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+"Пожалуйста, введите свой старый пароль в целях безопасности, а затем дважды "
+"введите новый пароль, чтобы мы могли проверить, правильно ли вы ввели его."
+
+#: .\templates\registration\password_change_form.html:21
+#: .\templates\registration\password_reset_confirm.html:12
+msgid "Change my password"
+msgstr "Изменить пароль"
+
+#: .\templates\registration\password_reset_complete.html:9
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr "Ваш пароль установлен. Вы можете войти в систему сейчас."
+
+#: .\templates\registration\password_reset_confirm.html:9
+msgid ""
+"Please enter Your new password twice so we can verify You typed it in "
+"correctly."
+msgstr ""
+"Пожалуйста, введите свой новый пароль дважды, чтобы мы могли убедиться, что "
+"Вы ввели его правильно."
+
+#: .\templates\registration\password_reset_confirm.html:15
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+"Ссылка для сброса пароля недействительна, возможно, потому, что она уже "
+"использовалась. Запросите новый сброс пароля."
+
+#: .\templates\registration\password_reset_done.html:8
+msgid ""
+"We've e-mailed You instructions for setting your password, if an account "
+"exists with the email You entered. You should receive them shortly."
+msgstr ""
+"Мы отправили Вам по электронной почте инструкции по установке пароля, если "
+"существует учетная запись с указанным Вами адресом электронной почты. Вы "
+"получите их в ближайшее время."
+
+#: .\templates\registration\password_reset_done.html:9
+msgid ""
+"If You don't receive an e-mail, please make sure You've entered the address "
+"You registered with, and check your spam folder."
+msgstr ""
+"Если Вы не получили письмо, пожалуйста убедитесь, что Вы ввели адрес "
+"электронной почты который Вы использовали при регистрации, и проверьте папку "
+"спам в своем почтовом ящике"
+
+#: .\templates\registration\password_reset_email.html:2
+#, python-format
+msgid ""
+"You're receiving this e-mail because You requested a password reset for Your "
+"user account at\n"
+"    %(site_name)s."
+msgstr ""
+
+#: .\templates\registration\password_reset_email.html:5
+msgid "Please go to the following page and choose a new password:"
+msgstr "Перейдите на следующую страницу и выберите новый пароль:"
+
+#: .\templates\registration\password_reset_email.html:9
+msgid "Your username, in case You've forgotten:"
+msgstr "Ваше имя пользователя, если Вы забыли:"
+
+#: .\templates\registration\password_reset_email.html:11
+msgid "Thanks for using our site!"
+msgstr "Спасибо, что пользуетесь нашим сайтом!"
+
+#: .\templates\registration\password_reset_email.html:13
+#, python-format
+msgid "The %(site_name)s team"
+msgstr ""
+
+#: .\templates\registration\password_reset_form.html:7
+msgid ""
+"Forgotten Your password? Enter Your e-mail address below, and we'll email "
+"instructions for setting a new one."
+msgstr ""
+"Забыли свой пароль? Введите свой адрес электронной почты ниже, и мы отправим "
+"Вам инструкции по установке нового адреса электронной почты."
+
+#: .\templates\registration\password_reset_form.html:10
+msgid "Reset my password"
+msgstr "Сбросить пароль"
+
+#: .\templates\registration\signup.html:4
+msgid "Registration on nstopboost.com"
+msgstr "Регистрация на nstopboost.com "
+
+#: .\templates\registration\signup.html:11
+msgid "Registration"
+msgstr "Регистрация нового пользователя"
+
+#~ msgid "Specify the third start time of the order"
+#~ msgstr "Укажите третье время начала выполнения заказа"
+
+#~ msgid "Your order has been successfully paid"
+#~ msgstr "Вы успешно оплатили свой заказ"
+
+#~ msgid "Description of checkbox # 1:"
+#~ msgstr "Описание чекбокса №1"
+
+#~ msgid "Description of checkbox # 2:"
+#~ msgstr "Описание чекбокса №2"
+
+#~ msgid "Description of select # 1:"
+#~ msgstr "Описание опции селект 1"
+
+#~ msgid "Description of select # 2:"
+#~ msgstr "Описание опции селект 2"

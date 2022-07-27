@@ -1,0 +1,14 @@
+{% extends 'catalog/base_generic.html' %}
+
+{% block title %}Тестовая главная страница{% endblock %}
+{% block Description %}content="Тут должен быть Description"{% endblock Description %}
+
+{% block content %}
+    {% for product in products %}
+    <a HREF="/catalog/{{product.category}}/{{product.slug}}/">{{ product.name }}</a><br>
+    {% endfor %}
+    <p></p>
+{% endblock content %}
+
+
+<a href=""></a>
